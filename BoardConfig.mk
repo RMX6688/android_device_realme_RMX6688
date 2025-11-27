@@ -70,7 +70,8 @@ TARGET_SCREEN_DENSITY := 560
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
-    vendor/lineage/config/device_framework_matrix.xml
+    vendor/lineage/config/device_framework_matrix.xml \
+    hardware/mediatek/vintf/mediatek_framework_compatibility_matrix.xml
 
 # Kernel
 KERNEL_PREBUILTS_DIR := $(DEVICE_PATH)-kernel
