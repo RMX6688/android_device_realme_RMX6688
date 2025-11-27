@@ -1,1 +1,4 @@
 # Unpinned blobs from sys_mssi_64_cn_armv82-user 15 AP3A.240617.008 1755271183721 release-keys
+
+# AEE
+vendor/lib64/libaedv.so
