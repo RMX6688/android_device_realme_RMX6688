@@ -145,10 +145,11 @@ TARGET_SCREEN_DENSITY := 480
 
 # VINTF
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
-    vendor/lineage/config/device_framework_matrix.xml \
 
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
-    hardware/mediatek/vintf/mediatek_framework_compatibility_matrix.xml
+    hardware/mediatek/vintf/mediatek_framework_compatibility_matrix.xml \
+    $(DEVICE_PATH)/device_framework_matrix.xml \
+    vendor/lineage/config/device_framework_matrix.xml
 
 # Security patch level
 BOOT_SECURITY_PATCH := 2025-08-01
