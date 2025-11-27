@@ -1,0 +1,117 @@
+on early-init && property:ro.boot.perf_state=1
+    # boot perf. tune
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq 1000000
+    write /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq 1100000
+    #write /sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq 1100000
+
+    write /sys/devices/system/cpu/cpufreq/policy7/scaling_max_freq 3100000
+
+    write /sys/class/devfreq/mtk-dvfsrc-devfreq/userspace/set_freq 4000000000
+
+on charger
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq 0
+    write /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq 0
+    write /sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq 0
+    write /sys/class/devfreq/mtk-dvfsrc-devfreq/userspace/set_freq 0
+
+#ifdef OPLUS_FEATURE_CHG_BASIC
+#Baoquan.Lai@BSP.CHG.Basic 2024/06/05 modify for the issue of kpoc charger power consume
+on late-init && property:ro.bootmode=charger
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq 0
+    write /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq 0
+    write /sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq 0
+    write /sys/class/devfreq/mtk-dvfsrc-devfreq/userspace/set_freq 0
+#endif
+
+on post-fs-data
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor sugov_ext
+    write /sys/devices/system/cpu/cpufreq/policy4/scaling_governor sugov_ext
+    write /sys/devices/system/cpu/cpufreq/policy7/scaling_governor sugov_ext
+    write /proc/sys/kernel/sched_pelt_multiplier 4
+    write /proc/sys/kernel/sched_util_clamp_min_rt_default 0
+
+    write /sys/devices/system/cpu/cpu0/cpufreq/sugov_ext/up_rate_limit_us 0
+    write /sys/devices/system/cpu/cpu4/cpufreq/sugov_ext/up_rate_limit_us 0
+    write /sys/devices/system/cpu/cpu7/cpufreq/sugov_ext/up_rate_limit_us 0
+    write /sys/devices/system/cpu/cpu0/cpufreq/sugov_ext/down_rate_limit_us 0
+    write /sys/devices/system/cpu/cpu4/cpufreq/sugov_ext/down_rate_limit_us 0
+    write /sys/devices/system/cpu/cpu7/cpufreq/sugov_ext/down_rate_limit_us 0
+
+    write /dev/cpuctl/top-app/cpu.shares 5120
+    write /dev/cpuctl/foreground/cpu.shares 4096
+    write /dev/cpuctl/sstop/cpu.shares 5120
+    write /dev/cpuctl/ssfg/cpu.shares 4096
+
+on post-fs-data && property:ro.boot.perf_state=1
+    # boot perf. tune
+    write /dev/cpuctl/system/cpu.uclamp.min 100
+    write /dev/cpuctl/system/cpu.uclamp.latency_sensitive 1
+    write /dev/cpuctl/system-background/cpu.uclamp.min 100
+    write /dev/cpuctl/system-background/cpu.uclamp.latency_sensitive 1
+    write /dev/cpuctl/foreground/cpu.uclamp.min 100
+    write /dev/cpuctl/foreground/cpu.uclamp.latency_sensitive 1
+    write /dev/cpuctl/top-app/cpu.uclamp.min 100
+    write /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive 1
+    write /dev/cpuctl/background/cpu.uclamp.min 100
+    write /dev/cpuctl/background/cpu.uclamp.latency_sensitive 1
+
+on boot
+    chown system system /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
+    chmod 0660 /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
+    chown system system /sys/devices/system/cpu/cpufreq/policy4/scaling_governor
+    chmod 0660 /sys/devices/system/cpu/cpufreq/policy4/scaling_governor
+    chown system system /sys/devices/system/cpu/cpufreq/policy7/scaling_governor
+    chmod 0660 /sys/devices/system/cpu/cpufreq/policy7/scaling_governor
+
+on property:sys.boot_completed=1
+    write /sys/kernel/debug/sched/migration_cost_ns 200000
+
+    # start cpuqos
+    write /sys/devices/system/cpu/cpuqos/cpuqos_boot_complete 1
+
+on property:sys.boot_completed=1 && property:ro.boot.perf_state=1
+    # restore boot perf. tune
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq 0
+    write /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq 0
+    write /sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq 0
+    write /sys/class/devfreq/mtk-dvfsrc-devfreq/userspace/set_freq 0
+
+    write /dev/cpuctl/system/cpu.uclamp.min 0
+    write /dev/cpuctl/system/cpu.uclamp.latency_sensitive 0
+    write /dev/cpuctl/system-background/cpu.uclamp.min 0
+    write /dev/cpuctl/system-background/cpu.uclamp.latency_sensitive 0
+    write /dev/cpuctl/foreground/cpu.uclamp.min 0
+    write /dev/cpuctl/foreground/cpu.uclamp.latency_sensitive 0
+    write /dev/cpuctl/top-app/cpu.uclamp.min 0
+    write /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive 0
+    write /dev/cpuctl/background/cpu.uclamp.min 0
+    write /dev/cpuctl/background/cpu.uclamp.latency_sensitive 0
+
+    write /sys/devices/system/cpu/cpufreq/policy7/scaling_max_freq 2147483647
+
+#ifdef OPLUS_THERMAL_IPA
+on property:sys.ipa_thermal_number=*
+    chown root system /sys/class/thermal/thermal_zone${sys.ipa_thermal_number}/k_d
+    chown root system /sys/class/thermal/thermal_zone${sys.ipa_thermal_number}/k_i
+    chown root system /sys/class/thermal/thermal_zone${sys.ipa_thermal_number}/k_po
+    chown root system /sys/class/thermal/thermal_zone${sys.ipa_thermal_number}/k_pu
+    chown root system /sys/class/thermal/thermal_zone${sys.ipa_thermal_number}/sustainable_power
+    chmod 0664 /sys/class/thermal/thermal_zone${sys.ipa_thermal_number}/sustainable_power
+    chmod 0664 /sys/class/thermal/thermal_zone${sys.ipa_thermal_number}/mode
+    chmod 0664 /sys/devices/platform/soc/soc:ipa/k_d
+    chmod 0664 /sys/devices/platform/soc/soc:ipa/k_i
+    chmod 0664 /sys/devices/platform/soc/soc:ipa/k_po
+    chmod 0664 /sys/devices/platform/soc/soc:ipa/k_pu
+    chmod 0664 /sys/devices/platform/soc/soc:ipa/sustainable_power
+    chmod 0664 /sys/devices/platform/soc/soc:ipa/use_power_budget
+    chmod 0664 /sys/devices/platform/soc/soc:ipa/use_thermalcontrol_limit
+    chmod 0664 /sys/devices/platform/soc/soc:ipa/clt_state_limit
+    write /sys/class/thermal/thermal_zone${sys.ipa_thermal_number}/policy user_space
+    write /sys/class/thermal/thermal_zone${sys.ipa_thermal_number}/sustainable_power 9999
+    write /sys/class/thermal/thermal_zone${sys.ipa_thermal_number}/mode enabled
+    setprop ro.vendor.oplus.ipa.thermalzone ${sys.ipa_thermal_number}
+
+on property:sys.ipa_feature.disabled=true
+    write /sys/class/thermal/thermal_zone${sys.ipa_thermal_number}/mode disabled
+#endif /* OPLUS_THERMAL_IPA */
+
