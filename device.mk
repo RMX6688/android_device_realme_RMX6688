@@ -111,6 +111,27 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/com.nxp.mifare.xml
 
+# Modules
+PRODUCT_PACKAGES += \
+    init.insmod.sh \
+    init.insmod.mt6991.cfg
+
+# Rootdir
+PRODUCT_PACKAGES += \
+    fstab.mt6991 \
+    fstab.mt6991.vendor_ramdisk \
+    init.connectivity.common.rc \
+    init.connectivity.rc \
+    init.modem.rc \
+    init.mtkgki.rc \
+    init.mt6991.rc \
+    init.mt6991.usb.rc \
+    init.project.rc \
+    init.cgroup.rc \
+    init_conninfra.rc \
+    init.sensor_2_0.rc \
+    ueventd.mt6991.rc
+
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 35
 
