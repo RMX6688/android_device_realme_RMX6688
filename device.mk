@@ -17,6 +17,10 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
 
 PRODUCT_PACKAGES += \
+    com.android.hardware.boot \
+    android.hardware.boot-service.default_recovery
+
+PRODUCT_PACKAGES += \
     update_engine \
     update_engine_sideload \
     update_verifier
@@ -42,6 +46,15 @@ PRODUCT_PACKAGES += \
 
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.1-impl.custom \
+    fastbootd
+
+# Health
+PRODUCT_PACKAGES += \
+    android.hardware.health-service.mediatek \
+    android.hardware.health-service.mediatek-recovery
 
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 35
