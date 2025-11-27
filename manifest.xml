@@ -3,5 +3,9 @@
 
  SPDX-License-Identifier: Apache-2.0
 -->
-<manifest version="8.0" type="device" target-level="7">
+<manifest version="8.0" type="device" target-level="8">
+    <hal format="aidl">
+        <name>vendor.mediatek.hardware.nvram</name>
+        <fqname>INvram/default</fqname>
+    </hal>
 </manifest>
