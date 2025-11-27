@@ -6,6 +6,8 @@
 
 DEVICE_PATH := device/realme/RMX6688
 
+BUILD_BROKEN_DUP_RULES := true
+
 # A/B
 AB_OTA_UPDATER := true
 
