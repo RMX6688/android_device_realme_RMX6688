@@ -24,7 +24,9 @@ AB_OTA_POSTINSTALL_CONFIG += \
     POSTINSTALL_OPTIONAL_vendor=true
 
 PRODUCT_PACKAGES += \
+    android.hardware.boot-service.default_recovery \
     checkpoint_gc \
+    com.android.hardware.boot \
     otapreopt_script \
     update_engine \
     update_engine_sideload \
@@ -35,6 +37,16 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
+# Fastboot
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.1-impl.custom \
+    fastbootd
+
+# Health
+PRODUCT_PACKAGES += \
+    android.hardware.health-service.mediatek \
+    android.hardware.health-service.mediatek-recovery
 
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 35
