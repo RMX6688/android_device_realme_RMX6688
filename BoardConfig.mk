@@ -36,6 +36,7 @@ BOARD_USES_GENERIC_KERNEL_IMAGE := true
 BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
 
 BOARD_KERNEL_CMDLINE += bootopt=64S3,32N2,64N2 buildvariant=$(TARGET_BUILD_VARIANT)
+BOARD_BOOTCONFIG := androidboot.selinux=permissive
 
 BOARD_MKBOOTIMG_ARGS += --kernel_offset $(BOARD_KERNEL_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
@@ -127,7 +128,13 @@ TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 
+# Properties
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
+
 # Recovery
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/fstab.mt6991
 BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
 BOARD_INCLUDE_RECOVERY_RAMDISK_IN_VENDOR_BOOT := true
 TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
@@ -135,6 +142,20 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 # Display
 TARGET_SCREEN_DENSITY := 480
+
+# VINTF
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
+    vendor/lineage/config/device_framework_matrix.xml \
+
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
+    hardware/mediatek/vintf/mediatek_framework_compatibility_matrix.xml
+
+# Security patch level
+BOOT_SECURITY_PATCH := 2025-08-01
+VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
+
+# SELinux
+include device/mediatek/sepolicy_vndr/SEPolicy.mk
 
 # Verified boot
 BOARD_AVB_ENABLE := true
