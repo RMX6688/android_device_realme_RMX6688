@@ -61,7 +61,9 @@ PRODUCT_SHIPPING_API_LEVEL := 35
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    hardware/mediatek \
+    hardware/oneplus
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/realme/RMX6688/RMX6688-vendor.mk)
