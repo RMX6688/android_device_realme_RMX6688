@@ -8,4 +8,12 @@
         <name>vendor.mediatek.hardware.nvram</name>
         <fqname>INvram/default</fqname>
     </hal>
+    <hal format="aidl">
+        <name>android.hardware.security.secureclock</name>
+        <fqname>ISecureClock/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>android.hardware.security.sharedsecret</name>
+        <fqname>ISharedSecret/default</fqname>
+    </hal>
 </manifest>
