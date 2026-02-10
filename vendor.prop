@@ -210,3 +210,8 @@ vendor.debug.sf.dynamic_duration.sf.late.60=13600000
 vendor.debug.sf.dynamic_duration.sf.late.90=13100000
 vendor.debug.sf.dynamic_duration.sf.late=14600000
 vendor.debug.sf.dynamic_duration.switch=1
+
+# TEE
+ro.vendor.mtk_microtrust_tee_support=1
+ro.vendor.mtk_mitee_support=1
+ro.vendor.mtk_tee_gp_support=1
