@@ -268,7 +268,6 @@ system_ext/lib64/vendor.pixelworks.hardware.display@1.0.so
 system_ext/lib64/vendor.pixelworks.hardware.feature@1.0.so
 
 # Gatekeeper
-vendor/etc/vintf/manifest/android.hardware.gatekeeper-service.trustonic.xml
 vendor/etc/init/android.hardware.gatekeeper-service.trustonic.rc
 vendor/lib64/android.hardware.gatekeeper-V1-ndk.so
 vendor/bin/hw/android.hardware.gatekeeper-service.trustonic

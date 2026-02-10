@@ -66,7 +66,7 @@ PRODUCT_PACKAGES += \
 
 # Shims
 PRODUCT_PACKAGES += \
-    android.frameworks.stats-V1-ndk.vendor
+    android.frameworks.stats-V1-ndk.vendor \
     libprocessgroup_shim
 
 # Dynamic Partitions

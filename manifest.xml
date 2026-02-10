@@ -30,9 +30,8 @@
         <name>android.hardware.security.sharedsecret</name>
         <fqname>ISharedSecret/default</fqname>
     </hal>
-     <hal format="hidl">
+    <hal format="aidl">
         <name>android.hardware.gatekeeper</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.0::IGatekeeper/default</fqname>
+        <fqname>IGatekeeper/default</fqname>
     </hal>
 </manifest>
