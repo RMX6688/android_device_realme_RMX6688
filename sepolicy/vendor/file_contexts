@@ -1,1 +1,2 @@
 /vendor/bin/hw/android\.hardware\.security\.keymint@.*-service\.trustonic u:object_r:hal_keymint_default_exec:s0
+/vendor/bin/init\.selinux\.sh u:object_r:setenforce_sh_exec:s0

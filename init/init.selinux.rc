@@ -1,0 +1,21 @@
+# Put SELinux into permissive mode at early-init.
+#
+# This is a runtime counterpart to BOARD_BOOTCONFIG's androidboot.selinux=permissive:
+# it also works when the running kernel/boot image is not ours (e.g. DSU testing),
+# where the boot config cannot carry that flag.
+#
+# The actual write to /sys/fs/selinux/enforce is only permitted from a *permissive*
+# domain, so the script runs in the dedicated `setenforce_sh` domain
+# (see sepolicy/vendor/setenforce_sh.te, and AOSP's su.te which uses the same trick).
+
+service selinux_permissive /vendor/bin/sh /vendor/bin/init.selinux.sh
+    class core
+    user root
+    group root system
+    seclabel u:r:setenforce_sh:s0
+    file /dev/kmsg w
+    oneshot
+    disabled
+
+on early-init
+    start selinux_permissive

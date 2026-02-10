@@ -87,3 +87,17 @@ prebuilt_etc {
     src: "ueventd.mt6991.rc",
     vendor: true,
 }
+
+// SELinux permissive at early-init (see the rc for details)
+sh_binary {
+    name: "init.selinux.sh",
+    src: "init.selinux.sh",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.selinux.rc",
+    src: "init.selinux.rc",
+    relative_install_path: "init/hw",
+    vendor: true,
+}

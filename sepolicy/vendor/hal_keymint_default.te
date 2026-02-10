@@ -1,3 +1,0 @@
-init_daemon_domain(hal_keymint_default)
-
-hal_server_domain(hal_keymint_default, hal_keymint)
