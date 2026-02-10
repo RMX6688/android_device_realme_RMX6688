@@ -44,6 +44,7 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@4.0.vendor \
     android.hardware.graphics.common-V3-ndk.vendor \
     android.hardware.graphics.composer3-V3-ndk.vendor \
+    android.hardware.graphics.composer@2.1-resources-v34.vendor \
     android.hardware.graphics.composer@2.2-resources.vendor \
     libdrm.vendor \
     libutilscallstack.vendor
@@ -159,7 +160,10 @@ PRODUCT_COPY_FILES += \
 # Shims
 PRODUCT_PACKAGES += \
     android.frameworks.stats-V1-ndk.vendor \
-    libprocessgroup.vendor
+    libprocessgroup.vendor \
+    android.hardware.gatekeeper@1.0-impl \
+    android.hardware.gatekeeper@1.0-service \
+    libprocessgroup_shim
 
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 35

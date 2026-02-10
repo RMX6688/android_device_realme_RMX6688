@@ -5,6 +5,10 @@
 -->
 <manifest version="8.0" type="device" target-level="8">
     <hal format="aidl">
+        <name>android.hardware.gatekeeper</name>
+        <fqname>IGatekeeper/default</fqname>
+    </hal>
+    <hal format="aidl">
         <name>android.hardware.graphics.allocator</name>
         <fqname>IAllocator/default</fqname>
     </hal>

@@ -34,6 +34,8 @@ system_ext/etc/permissions/vendor-oplus-hardware-keymint.xml
 system_ext/lib64/vendor.oplus.hardware.keymint-V1-ndk.so
 vendor/lib64/android.hardware.security.keymint-V3-ndk.so
 vendor/lib64/android.hardware.security.keymint-V1-ndk.so
+vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service.trustonic.xml
+vendor/etc/vintf/manifest/android.hardware.security.secureclock-service.trustonic.xml
 
 # Trusted Execution Environment (TEE)
 odm/vendor/app/mcRegistry/033c0000000000000000000000000000.drbin
@@ -83,6 +85,11 @@ vendor/etc/init/trustonic.rc
 vendor/lib64/libMcClient.so
 vendor/lib64/libMcTeeSoter.so
 vendor/lib64/libTEECommon.so
+
+# Gatekeeper
+vendor/etc/init/android.hardware.gatekeeper-service.trustonic.rc
+vendor/lib64/android.hardware.gatekeeper-V1-ndk.so
+vendor/bin/hw/android.hardware.gatekeeper-service.trustonic
 
 # Display
 vendor/etc/init/android.hardware.graphics.allocator-V2-service-mediatek.rc
