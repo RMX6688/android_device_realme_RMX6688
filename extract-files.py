@@ -20,9 +20,15 @@ from extract_utils.main import (
 
 lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
+    (
+        'android.hardware.graphics.allocator-V1-ndk',
+        'android.hardware.graphics.composer3-V2-ndk',
+    ): lib_fixup_remove,
 }
 
 blob_fixups: blob_fixups_user_type = {
+    'vendor/lib64/hw/hwcomposer.mtk_common.so': blob_fixup()
+        .add_needed('libprocessgroup_shim.so'),
 }
 
 module = ExtractUtilsModule(

@@ -29,6 +29,7 @@ PRODUCT_PACKAGES += \
     com.android.hardware.boot \
     create_pl_dev \
     create_pl_dev.recovery \
+    android.hardware.memtrack-service.mediatek-mali \
     otapreopt_script \
     update_engine \
     update_engine_sideload \
@@ -36,6 +37,16 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
+
+# Display
+PRODUCT_PACKAGES += \
+    android.frameworks.sensorservice@1.0.vendor \
+    android.hardware.graphics.allocator@4.0.vendor \
+    android.hardware.graphics.common-V3-ndk.vendor \
+    android.hardware.graphics.composer3-V3-ndk.vendor \
+    android.hardware.graphics.composer@2.2-resources.vendor \
+    libdrm.vendor \
+    libutilscallstack.vendor
 
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -50,6 +61,15 @@ PRODUCT_PACKAGES += \
     android.hardware.health-service.mediatek \
     android.hardware.health-service.mediatek-recovery
 
+# HIDL
+# The vendor stack is HIDL based and AOSP no longer ships the infrastructure on
+# devices with PRODUCT_SHIPPING_API_LEVEL >= 35.
+PRODUCT_PACKAGES += \
+    libhidltransport \
+    libhidltransport.vendor \
+    libhwbinder \
+    libhwbinder.vendor
+
 # Init
 PRODUCT_PACKAGES += \
     fstab.mt6991 \
@@ -60,11 +80,11 @@ PRODUCT_PACKAGES += \
     init.insmod.mt6991.cfg \
     init.insmod.sh \
     init.modem.rc \
+    init.mt6991.power.rc \
     init.mt6991.rc \
     init.mt6991.usb.rc \
     init.mtkgki.rc \
     init.project.rc \
-    init.cgroup.rc \
     init.sensor_2_0.rc \
     ueventd.mt6991.rc
 
@@ -135,6 +155,11 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.vulkan.deqp.level-2022-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/com.nxp.mifare.xml
+
+# Shims
+PRODUCT_PACKAGES += \
+    android.frameworks.stats-V1-ndk.vendor \
+    libprocessgroup.vendor
 
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 35
