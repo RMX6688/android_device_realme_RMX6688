@@ -61,11 +61,13 @@ PRODUCT_PACKAGES += \
     libdrm.vendor
 
 PRODUCT_PACKAGES += \
+    android.hardware.graphics.composer@2.1-resources-v34.vendor \
     libutilscallstack.vendor
 
 # Shims
 PRODUCT_PACKAGES += \
-    android.frameworks.stats-V1-ndk.vendor
+    android.frameworks.stats-V1-ndk.vendor \
+    libprocessgroup_shim
 
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -84,6 +86,11 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
     libprocessgroup.vendor
+
+# Gatekeeper
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-impl \
+    android.hardware.gatekeeper@1.0-service
 
 # Health
 PRODUCT_PACKAGES += \
