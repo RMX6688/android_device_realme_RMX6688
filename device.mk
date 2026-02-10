@@ -29,7 +29,6 @@ PRODUCT_PACKAGES += \
     com.android.hardware.boot \
     create_pl_dev \
     create_pl_dev.recovery \
-    android.hardware.memtrack-service.mediatek-mali \
     otapreopt_script \
     update_engine \
     update_engine_sideload \
@@ -46,6 +45,7 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer3-V3-ndk.vendor \
     android.hardware.graphics.composer@2.1-resources-v34.vendor \
     android.hardware.graphics.composer@2.2-resources.vendor \
+    android.hardware.memtrack-service.mediatek \
     libdrm.vendor \
     libutilscallstack.vendor
 
@@ -66,6 +66,9 @@ PRODUCT_PACKAGES += \
 # The vendor stack is HIDL based and AOSP no longer ships the infrastructure on
 # devices with PRODUCT_SHIPPING_API_LEVEL >= 35.
 PRODUCT_PACKAGES += \
+    android.hidl.allocator@1.0-service \
+    android.hidl.allocator@1.0.vendor \
+    hwservicemanager \
     libhidltransport \
     libhidltransport.vendor \
     libhwbinder \
@@ -86,6 +89,8 @@ PRODUCT_PACKAGES += \
     init.mt6991.usb.rc \
     init.mtkgki.rc \
     init.project.rc \
+    init.selinux.rc \
+    init.selinux.sh \
     init.sensor_2_0.rc \
     ueventd.mt6991.rc
 
@@ -161,8 +166,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.frameworks.stats-V1-ndk.vendor \
     libprocessgroup.vendor \
-    android.hardware.gatekeeper@1.0-impl \
-    android.hardware.gatekeeper@1.0-service \
     libprocessgroup_shim
 
 # Shipping API level
@@ -171,8 +174,7 @@ PRODUCT_SHIPPING_API_LEVEL := 35
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/mediatek \
-    hardware/oneplus
+    hardware/mediatek
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/realme/RMX6688/RMX6688-vendor.mk)

@@ -143,13 +143,19 @@ TARGET_USERIMAGES_USE_F2FS := true
 # Display
 TARGET_SCREEN_DENSITY := 480
 
+# Soong config
+# hardware/mediatek would otherwise install its own init.$(TARGET_BOARD_PLATFORM).usb.rc
+# next to ours; ours carries the OPPO/Realme gadget setup.
+SOONG_CONFIG_NAMESPACES += mediatek_gadget
+SOONG_CONFIG_mediatek_gadget += use_custom_usb_gadget_rc
+SOONG_CONFIG_mediatek_gadget_use_custom_usb_gadget_rc := true
+
 # VINTF
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     hardware/mediatek/vintf/mediatek_framework_compatibility_matrix.xml \
-    $(DEVICE_PATH)/device_framework_matrix.xml \
-    vendor/lineage/config/device_framework_matrix.xml
+    $(DEVICE_PATH)/device_framework_matrix.xml
 
 # Security patch level
 BOOT_SECURITY_PATCH := 2025-08-01
