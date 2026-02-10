@@ -5,6 +5,20 @@
 -->
 <manifest version="8.0" type="device" target-level="8">
     <hal format="aidl">
+        <name>android.hardware.graphics.allocator</name>
+        <fqname>IAllocator/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.graphics.mapper</name>
+        <transport arch="32+64">passthrough</transport>
+        <fqname>@4.0::IMapper/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.mediatek.hardware.composer_ext</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::IComposerExt/default</fqname>
+    </hal>
+    <hal format="aidl">
         <name>vendor.mediatek.hardware.nvram</name>
         <fqname>INvram/default</fqname>
     </hal>

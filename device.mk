@@ -48,12 +48,42 @@ PRODUCT_PACKAGES += \
     create_pl_dev \
     create_pl_dev.recovery
 
+# Display
+PRODUCT_PACKAGES += \
+    android.hardware.memtrack-service.mediatek-mali
+
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@4.0.vendor \
+    android.hardware.graphics.common-V3-ndk.vendor \
+    android.hardware.graphics.composer3-V3-ndk.vendor \
+    android.hardware.graphics.composer@2.2-resources.vendor \
+    android.frameworks.sensorservice@1.0.vendor \
+    libdrm.vendor
+
+PRODUCT_PACKAGES += \
+    libutilscallstack.vendor
+
+# Shims
+PRODUCT_PACKAGES += \
+    android.frameworks.stats-V1-ndk.vendor
+
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.1-impl.custom \
     fastbootd
+
+# HIDL
+PRODUCT_PACKAGES += \
+    libhidltransport \
+    libhidltransport.vendor \
+    libhwbinder \
+    libhwbinder.vendor
+
+# RIL
+PRODUCT_PACKAGES += \
+    libprocessgroup.vendor
 
 # Health
 PRODUCT_PACKAGES += \
@@ -144,7 +174,7 @@ PRODUCT_PACKAGES += \
     init.mt6991.rc \
     init.mt6991.usb.rc \
     init.project.rc \
-    init.cgroup.rc \
+    init.mt6991.power.rc \
     init_conninfra.rc \
     init.sensor_2_0.rc \
     ueventd.mt6991.rc

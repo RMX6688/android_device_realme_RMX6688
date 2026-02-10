@@ -1,5 +1,5 @@
 # MTK platform .rc configure
-import /vendor/etc/init/hw/init.cgroup.rc
+import /vendor/etc/init/hw/init.mt6991.power.rc
 import /vendor/etc/init/hw/init.connectivity.rc
 import /vendor/etc/init/hw/init.mt6991.usb.rc
 import /vendor/etc/init/hw/init.project.rc

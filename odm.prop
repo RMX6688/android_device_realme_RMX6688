@@ -1,0 +1,18 @@
+# Display
+persist.vendor.sys.pq.disp.dither.bypass=1
+ro.build.display.id=RMX6688_11_A.01
+ro.build.display.id_ims=RMX6688_11_A.01_250815
+ro.display.screen_type=1
+ro.oplus.display.reset_two_pq_layer=1
+ro.oplus.display.screenSizeCentimeter.primary=17.27
+ro.oplus.display.screenSizeInches.primary=6.8
+ro.vendor.oplus.display.cwb.aod_forbidden=1
+ro.vendor.oplus.display.cwb.ct_support=1
+ro.vendor.oplus.display.cwb.display_id=0
+ro.vendor.oplus.display.cwb.fod_forbidden=0
+ro.vendor.oplus.display.cwb.postprocess=1
+ro.vendor.oplus.display.cwb.res_switch_type=2
+ro.vendor.oplus.display.cwb.roi=1
+ro.vendor.pq.update_gamma=1
+vendor.display.uir_support=1
+vendor.oplus.display.global.dre_status=1
