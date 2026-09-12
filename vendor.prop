@@ -1,3 +1,11 @@
+# Audio
+ro.vendor.qti.va_aosp.support=0
+
+# Bluetooth
+persist.bluetooth.a2dp_offload.disabled=false
+ro.bluetooth.a2dp_offload.supported=true
+ro.bluetooth.leaudio_offload.supported=true
+
 # Display
 debug.mediatek.appgamepq_compress=1
 debug.mediatek.disp_decompress=1
