@@ -31,4 +31,13 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.audio.core</name>
+        <version>2</version>
+        <interface>
+            <name>IModule</name>
+            <instance>virtual</instance>
+            <instance>binaural_record</instance>
+        </interface>
+    </hal>
 </compatibility-matrix>

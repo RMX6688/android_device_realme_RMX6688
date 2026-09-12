@@ -1,3 +1,9 @@
+
+# Audio
+ro.vendor.qti.va_aosp.support=0
+ro.bluetooth.a2dp_offload.supported=true
+ro.bluetooth.leaudio_offload.supported=true
+persist.bluetooth.a2dp_offload.disabled=false
 # Keystore
 ro.hardware.kmsetkey=trustonic
 
