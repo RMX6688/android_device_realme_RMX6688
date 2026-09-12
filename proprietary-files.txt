@@ -86,6 +86,7 @@ vendor/lib64/libMcTeeSoter.so
 vendor/lib64/libTEECommon.so
 
 # Display
+vendor/etc/init/android.hardware.graphics.allocator-V2-service-mediatek.rc
 vendor/etc/init/android.hardware.graphics.composer@3.3-service.rc
 vendor/bin/hw/android.hardware.graphics.composer@3.2-service
 vendor/bin/hw/android.hardware.graphics.composer@3.3-service
@@ -150,6 +151,7 @@ vendor/lib64/libFrameRecord.so
 vendor/lib64/libNoFpsActor.so
 vendor/lib64/libdre.so
 vendor/lib64/libxml2.so
+vendor/lib64/libtinyxml2.so
 vendor/lib64/libgpu_aux.so
 vendor/lib64/vendor.mediatek.hardware.mms-V1-ndk.so
 vendor/lib64/libsensorndkbridge.so
@@ -181,6 +183,7 @@ vendor/lib64/mt6991/arm.mali.platform-V2-ndk.so;SYMLINK=vendor/lib64/arm.mali.pl
 vendor/lib64/mt6991/arm.graphics-V5-ndk.so;SYMLINK=vendor/lib64/arm.graphics-V5-ndk.so
 vendor/lib64/mt6991/libarm_mali_config_sysprops.so;SYMLINK=vendor/lib64/libarm_mali_config_sysprops.so
 vendor/lib64/hw/mt6991/vulkan.mali.so;SYMLINK=vendor/lib64/hw/vulkan.mali.so
+vendor/lib64/hw/mt6991/mapper.mediatek.so;SYMLINK=vendor/lib64/hw/mapper.mediatek.so
 vendor/bin/hw/mt6991/arm.mali.platform-service.mediatek.mt6991;SYMLINK=vendor/bin/hw/arm.mali.platform-service.mediatek
 vendor/etc/gralloc/gpu.xml
 vendor/etc/gralloc/vpu.xml
@@ -251,6 +254,19 @@ vendor/etc/pq_flag.xml
 odm/etc/cust_pq_23105_P_3.xml
 odm/etc/cust_pq_a0026_P_3.xml
 odm/etc/cust_pq_ae031_P_3.xml
+odm/etc/p_3_a0020_backlight_data.xml
+odm/etc/p_3_a0020_cinema_eyeprotect_data.xml
+odm/etc/p_3_a0020_cm2_standard_eyeprotect_data.xml
+odm/etc/p_3_a0020_cm2_vivid_enhance_eyeprotect_data.xml
+odm/etc/p_3_a0020_cm2_vivid_standard_eyeprotect_data.xml
+odm/etc/p_3_a0020_colorful_eyeprotect_data.xml
+odm/etc/p_3_a0020_eyeprotect_data.xml
+odm/etc/p_3_a0020_srgb_eyeprotect_data.xml
+odm/etc/p_3_a0026_backlight_data.xml
+odm/etc/p_3_a0026_cinema_eyeprotect_data.xml
+odm/etc/p_3_a0026_colorful_eyeprotect_data.xml
+odm/etc/p_3_a0026_eyeprotect_data.xml
+odm/etc/p_3_a0026_srgb_eyeprotect_data.xml
 vendor/lib64/libaispq.so
 vendor/lib64/libappgamepq.so
 vendor/lib64/libhdrvideo.so
