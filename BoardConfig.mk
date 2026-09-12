@@ -70,8 +70,6 @@ TARGET_SCREEN_DENSITY := 560
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
-    $(DEVICE_PATH)/device_framework_matrix.xml \
-    vendor/lineage/config/device_framework_matrix.xml \
     hardware/mediatek/vintf/mediatek_framework_compatibility_matrix.xml
 
 # Kernel
@@ -139,6 +137,14 @@ TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 
 # Platform
 TARGET_BOARD_PLATFORM := mt6991
+
+# Soong config
+# hardware/mediatek generates the MTK USB gadget rc as init.$(TARGET_BOARD_PLATFORM).usb.rc,
+# which collides with our own module of that name. Opt out of the generic one so ours is used:
+# it carries the OPPO/Realme gadget setup (VID 0x22d9, UDC 16701000.usb0, ACM/AOD/kpoc modes).
+SOONG_CONFIG_NAMESPACES += mediatek_gadget
+SOONG_CONFIG_mediatek_gadget += use_custom_usb_gadget_rc
+SOONG_CONFIG_mediatek_gadget_use_custom_usb_gadget_rc := true
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop

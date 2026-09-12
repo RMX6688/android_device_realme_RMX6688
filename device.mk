@@ -50,7 +50,7 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    android.hardware.memtrack-service.mediatek-mali
+    android.hardware.memtrack-service.mediatek
 
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@4.0.vendor \
@@ -77,6 +77,15 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 # HIDL
+# AOSP stops shipping the HIDL infrastructure for devices with
+# PRODUCT_SHIPPING_API_LEVEL >= 35 (see base_system_ext.mk:
+# PRODUCT_PACKAGES_SHIPPING_API_LEVEL_34). The MTK/OPLUS vendor stack is still
+# entirely HIDL based, so without hwservicemanager no vendor HIDL HAL (graphics
+# mapper, composer_ext, ...) can be discovered. Stock ships both of these.
+PRODUCT_PACKAGES += \
+    hwservicemanager \
+    android.hidl.allocator@1.0-service
+
 PRODUCT_PACKAGES += \
     libhidltransport \
     libhidltransport.vendor \
@@ -87,11 +96,6 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
     libprocessgroup.vendor
-
-# Gatekeeper
-PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-impl \
-    android.hardware.gatekeeper@1.0-service
 
 # Health
 PRODUCT_PACKAGES += \
@@ -169,7 +173,8 @@ PRODUCT_COPY_FILES += \
 # Modules
 PRODUCT_PACKAGES += \
     init.insmod.sh \
-    init.insmod.mt6991.cfg
+    init.insmod.mt6991.cfg \
+    init.selinux.sh
 
 # Rootdir
 PRODUCT_PACKAGES += \
@@ -182,6 +187,7 @@ PRODUCT_PACKAGES += \
     init.mt6991.rc \
     init.mt6991.usb.rc \
     init.project.rc \
+    init.selinux.rc \
     init.mt6991.power.rc \
     init_conninfra.rc \
     init.sensor_2_0.rc \
@@ -193,12 +199,31 @@ PRODUCT_SHIPPING_API_LEVEL := 35
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/mediatek \
-    hardware/oneplus
+    hardware/mediatek
 
 # Vendor service manager
-PRODUCT_PACKAGES += \
-    vndservicemanager
+# Deliberately NOT shipping vndservicemanager.
+#
+# AOSP only installs it for PRODUCT_SHIPPING_API_LEVEL <= 29 (base_vendor.mk:
+# PRODUCT_PACKAGES_SHIPPING_API_LEVEL_29, together with vndservice). This device
+# is API 35, where a single unified /system/bin/servicemanager serves all binder
+# domains and clients use libbinder's BackendUnifiedServiceManager, so the legacy
+# per-domain servicemanager is obsolete.
+#
+# Forcing it back in is actively harmful: it is built against the stock vendor
+# libbinder blob while the system one is ours, so it exits with status 1 right
+# after start, and the stock vndservicemanager.rc carries
+#     onrestart class_restart main
+#     onrestart class_restart hal
+#     onrestart class_restart early_hal
+# so each crash tore down every service in those classes -- including our module
+# loader insmod_sh (class main) -- every 5 seconds. That killed modprobe in the
+# middle of init_module, and the interrupted kernel initialisations (e.g.
+# "workqueue: Failed to create a rescuer kthread for wq \"cfg80211\": -EINTR")
+# left drivers half-initialised and escalated into kernel panics.
+#
+# If a legacy MTK vendor service genuinely needs a separate vendor service
+# manager, do not just re-add this line -- fix the root cause instead.
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/realme/RMX6688/RMX6688-vendor.mk)

@@ -1,0 +1,23 @@
+# Domain for the early-init SELinux-disable script (init/init.selinux.sh).
+#
+# Why a permissive domain is required:
+# writing /sys/fs/selinux/enforce triggers the `setenforce` check on the
+# security class, which AOSP intentionally never grants to a normal domain
+# (system/sepolicy/public/domain.te: neverallow * kernel:security setenforce).
+# A permissive domain is the sanctioned escape hatch -- a denial there is only
+# audited, not enforced, so the write still reaches the kernel. AOSP does the
+# very same thing for su (system/sepolicy/private/su.te):
+#
+#     # su is also permissive to permit setenforce.
+#     permissive su;
+#
+# Deliberately no explicit `allow setenforce_sh security:security setenforce;`
+# here: an allow rule like that would collide with the platform neverallows,
+# while a permissive domain needs no allow at all.
+
+type setenforce_sh, domain;
+type setenforce_sh_exec, exec_type, vendor_file_type, file_type;
+
+permissive setenforce_sh;
+
+init_daemon_domain(setenforce_sh)
