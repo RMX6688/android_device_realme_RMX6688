@@ -5,6 +5,7 @@ vendor/lib64/libaedv.so
 
 # NVRAM
 vendor/bin/nvram_daemon
+vendor/lib64/libssl.so
 vendor/bin/fuelgauged_nvram
 vendor/bin/hw/vendor.mediatek.hardware.nvram-service
 vendor/etc/init/fuelgauged_nvram_init.rc
@@ -88,6 +89,7 @@ vendor/lib64/libTEECommon.so
 vendor/etc/init/android.hardware.graphics.composer@3.3-service.rc
 vendor/bin/hw/android.hardware.graphics.composer@3.2-service
 vendor/bin/hw/android.hardware.graphics.composer@3.3-service
+vendor/lib64/android.hardware.graphics.composer3-V2-ndk.so
 vendor/lib64/egl/libGLES_meow.so
 vendor/lib64/mt6991/libarm_egl_properties_sysprop.so;SYMLINK=vendor/lib64/libarm_egl_properties_sysprop.so
 vendor/lib64/egl/libMEOW_data.so
@@ -108,6 +110,10 @@ vendor/lib64/libion_mtk.so
 vendor/lib64/libion_ulit.so
 vendor/lib64/libmml.so
 vendor/lib64/libnpagent.so;DISABLE_CHECKELF
+vendor/lib64/vendor.mediatek.hardware.neuropilot.agent-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.0.so
+vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.1.so
+vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.2.so
 vendor/lib64/mt6991/libdpframework.so;SYMLINK=vendor/lib64/libdpframework.so
 vendor/lib64/mt6991/libmtk_drvb.so;SYMLINK=vendor/lib64/libmtk_drvb.so
 vendor/lib64/vendor.mediatek.hardware.composer_ext@1.0.so
@@ -125,11 +131,14 @@ vendor/lib64/libdisplayfossfeature_nature.so
 vendor/lib64/libsilkybrightnesscore.so
 vendor/lib64/libutilscallstack.so
 vendor/lib64/libolc_vnd.so
+odm/lib64/vendor.oplus.hardware.olc2-V3-ndk.so
 vendor/lib64/vendor.mediatek.hardware.pq_aidl-V4-ndk.so
 vendor/lib64/vendor.oplus.hardware.display.MixLut3D-V1-ndk_platform.so
 vendor/lib64/vendor.oplus.hardware.displaycolorfeature-V1-ndk.so
 vendor/lib64/android.frameworks.sensorservice-V1-ndk.so
 vendor/lib64/android.frameworks.sensorservice@1.0.so
+vendor/lib64/android.hardware.sensors-V2-ndk.so
+vendor/lib64/android.hardware.common.fmq-V1-ndk.so
 vendor/lib64/libhwcsensor.so
 vendor/lib64/libhwbinder.so
 vendor/lib64/libhidltransport.so
@@ -143,12 +152,14 @@ vendor/lib64/libNoFpsActor.so
 vendor/lib64/libdre.so
 vendor/lib64/libxml2.so
 vendor/lib64/libgpu_aux.so
+vendor/lib64/vendor.mediatek.hardware.mms-V1-ndk.so
 vendor/lib64/libsensorndkbridge.so
 vendor/lib64/libbinder.so
 vendor/lib64/libhidlbase.so
 vendor/lib64/libhidlmemory.so
 vendor/lib64/android.hidl.allocator@1.0.so
 vendor/lib64/android.hidl.memory@1.0.so
+vendor/lib64/android.hidl.memory.token@1.0.so
 vendor/lib64/libgpud.so
 vendor/lib64/libgralloc_metadata.so
 vendor/lib64/libgralloctypes_mtk.so
@@ -168,6 +179,7 @@ vendor/etc/mali_platform.config
 vendor/lib/egl/egl.cfg
 vendor/lib64/egl/mt6991/libGLES_mali.so;SYMLINK=vendor/lib64/egl/libGLES_mali.so
 vendor/lib64/mt6991/arm.mali.platform-V2-ndk.so;SYMLINK=vendor/lib64/arm.mali.platform-V2-ndk.so
+vendor/lib64/mt6991/arm.graphics-V5-ndk.so;SYMLINK=vendor/lib64/arm.graphics-V5-ndk.so
 vendor/lib64/mt6991/libarm_mali_config_sysprops.so;SYMLINK=vendor/lib64/libarm_mali_config_sysprops.so
 vendor/lib64/hw/mt6991/vulkan.mali.so;SYMLINK=vendor/lib64/hw/vulkan.mali.so
 vendor/bin/hw/mt6991/arm.mali.platform-service.mediatek.mt6991;SYMLINK=vendor/bin/hw/arm.mali.platform-service.mediatek
@@ -179,6 +191,7 @@ vendor/etc/gralloc/dpu.xml
 vendor/firmware/mali_csffw.bin
 vendor/etc/init/vendor.mediatek.hardware.mmlpq@V1-service.rc
 vendor/lib64/vendor.mediatek.hardware.mmlpq-V3-ndk.so
+vendor/lib64/mt6991/libmmlpqImpl.so;SYMLINK=vendor/lib64/libmmlpqImpl.so
 vendor/bin/hw/vendor.mediatek.hardware.mmlpq@V1-service
 system_ext/lib64/vendor.oplus.hardware.displaypanelfeature@1.0.so
 system_ext/lib64/vendor.oplus.hardware.displaypanelfeature@1.0.so
@@ -187,10 +200,14 @@ odm/etc/init/vendor.oplus.hardware.displaypanelfeature-service.rc
 odm/lib64/vendor.oplus.hardware.displaypanelfeature-V1-ndk.so
 odm/bin/displaypanelfeatureTest
 odm/bin/hw/vendor.oplus.hardware.displaypanelfeature-service
+odm/lib64/libdpaservice.so
+vendor/lib64/libjsoncpp.so
 vendor/etc/init/vendor.mediatek.hardware.mmagent-service.rc
 vendor/lib64/vendor.mediatek.hardware.mmagent@1.0.so
 vendor/lib64/vendor.mediatek.hardware.mmagent-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mmagent@1.1.so
+vendor/lib64/mt6991/libmmagent.so;SYMLINK=vendor/lib64/libmmagent.so
+vendor/lib64/mt6991/libneuron_runtime.8.so;SYMLINK=vendor/lib64/libneuron_runtime.8.so
 vendor/bin/hw/vendor.mediatek.hardware.mmagent-service
 
 # Display (AAL)
@@ -202,7 +219,7 @@ vendor/lib64/mt6991/libaal_cust_func.so;SYMLINK=vendor/lib64/libaal_cust_func.so
 
 # Display (CWB)
 vendor/lib64/libcwb_mtk_aidl.so
-vendor/lib64/vendor.oplus.hardware.cwb-V1-ndk.so
+vendor/lib64/vendor.oplus.hardware.cwb-V2-ndk.so
 
 # Display (PanelChaplin)
 odm/etc/PanelChaplin/24618_A0026_P_3_1_100nit.odf
@@ -241,6 +258,8 @@ vendor/lib64/mt6991/libaiselector.so;SYMLINK=vendor/lib64/libaiselector.so
 vendor/lib64/mt6991/libpq_sec.so;SYMLINK=vendor/lib64/libpq_sec.so
 vendor/lib64/mt6991/libpq_cust_base.so;SYMLINK=vendor/lib64/libpq_cust_base.so
 vendor/lib64/mt6991/libpqparamparser.so;SYMLINK=vendor/lib64/libpqparamparser.so
+vendor/lib64/libpqxmlflagparser.so
+vendor/lib64/libsdrparser.so
 vendor/lib64/mt6991/libpqconfig.so;SYMLINK=vendor/lib64/libpqconfig.so
 vendor/etc/init/vendor.mediatek.hardware.pq_aidl-service.rc
 vendor/lib64/vendor.mediatek.hardware.pq@2.3.so
@@ -259,6 +278,7 @@ vendor/lib64/vendor.mediatek.hardware.pq@2.4.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.2.so
 vendor/lib64/hw/mt6991/vendor.mediatek.hardware.pq_aidl-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.pq_aidl-impl.so
+vendor/lib64/libgz_uree.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.1.so
 vendor/bin/hw/vendor.mediatek.hardware.pq_aidl-service
 
