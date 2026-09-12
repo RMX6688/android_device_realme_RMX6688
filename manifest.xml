@@ -13,10 +13,43 @@
         <transport arch="32+64">passthrough</transport>
         <fqname>@4.0::IMapper/default</fqname>
     </hal>
-    <hal format="hidl">
+    <hal format="aidl">
         <name>vendor.mediatek.hardware.composer_ext</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.0::IComposerExt/default</fqname>
+        <fqname>IComposerExt/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.mediatek.hardware.pq_aidl</name>
+        <version>7</version>
+        <fqname>IPictureQuality_AIDL/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.mediatek.hardware.mmlpq</name>
+        <version>3</version>
+        <fqname>IMmlpq/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.mediatek.hardware.mmagent</name>
+        <fqname>IMMAgent/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.oplus.hardware.displaypanelfeature</name>
+        <version>1</version>
+        <fqname>IDisplayPanelFeature/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.oplus.hardware.displaycolorfeature</name>
+        <version>1</version>
+        <fqname>IDisplayColorFeature/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.oplus.hardware.display.MixLut3D</name>
+        <version>1</version>
+        <fqname>IMixLut3D/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.oplus.hardware.cwb</name>
+        <version>2</version>
+        <fqname>ICwbService/default</fqname>
     </hal>
     <hal format="aidl">
         <name>vendor.mediatek.hardware.nvram</name>

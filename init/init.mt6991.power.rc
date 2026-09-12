@@ -115,7 +115,7 @@ on property:sys.ipa_feature.disabled=true
     write /sys/class/thermal/thermal_zone${sys.ipa_thermal_number}/mode disabled
 #endif /* OPLUS_THERMAL_IPA */
 
-service vendor.hwcomposer-3-3 /vendor/bin/hw/android.hardware.graphics.composer@3.3-service
+service vendor.hwcomposer /vendor/bin/hw/android.hardware.graphics.composer@3.3-service
     class hal animation
     user system
     group graphics drmrpc

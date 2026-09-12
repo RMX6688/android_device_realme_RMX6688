@@ -7,6 +7,7 @@ ro.vendor.mtk_trustonic_tee_support=1
 
 # Display
 debug.mediatek.appgamepq_compress=1
+debug.mediatek.disp_decompress=1
 debug.renderengine.backend=skiagl
 graphics.gpu.profiler.support=true
 persist.log.tag.PQ_DS=I
@@ -80,6 +81,7 @@ ro.vendor.mtk_airegionpq_adaptive_support=0
 ro.vendor.mtk_backlight_hwc_support=1
 ro.vendor.mtk_pq_color_mode=3
 ro.vendor.mtk_pq_support=2
+ro.vendor.mml.mtk_mml_support=1
 ro.vendor.pq.mtk_aal_support=1
 ro.vendor.pq.mtk_ai_hdr_model_dq=0
 ro.vendor.pq.mtk_ai_region_pq_support=0

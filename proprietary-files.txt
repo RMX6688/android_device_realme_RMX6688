@@ -142,7 +142,6 @@ vendor/lib64/android.hardware.common.fmq-V1-ndk.so
 vendor/lib64/libhwcsensor.so
 vendor/lib64/libhwbinder.so
 vendor/lib64/libhidltransport.so
-vendor/lib64/libprocessgroup.so
 vendor/lib64/libged.so
 vendor/lib64/libgralloctypes.so
 vendor/lib64/libpower.so
@@ -248,6 +247,10 @@ vendor/lib64/libPanelChaplin_wrapper.so
 # Display (Picture Quality)
 vendor/etc/cust_color.xml
 vendor/etc/cust_pq.xml
+vendor/etc/pq_flag.xml
+odm/etc/cust_pq_23105_P_3.xml
+odm/etc/cust_pq_a0026_P_3.xml
+odm/etc/cust_pq_ae031_P_3.xml
 vendor/lib64/libaispq.so
 vendor/lib64/libappgamepq.so
 vendor/lib64/libhdrvideo.so
