@@ -128,6 +128,7 @@ vendor.mtk.hwc.HWC_PLAT_SWITCH_GET_FBT_CACHE_HIT=1
 
 # GPU
 graphics.gpu.profiler.support=true
+ro.vendor.mtk.gpu.service=1
 
 # Keystore
 ro.hardware.kmsetkey=trustonic
