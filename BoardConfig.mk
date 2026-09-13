@@ -150,6 +150,14 @@ SOONG_CONFIG_NAMESPACES += mediatek_gadget
 SOONG_CONFIG_mediatek_gadget += use_custom_usb_gadget_rc
 SOONG_CONFIG_mediatek_gadget_use_custom_usb_gadget_rc := true
 
+# Wifi
+WIFI_DRIVER_STATE_CTRL_PARAM := "/dev/wmtWifi"
+WIFI_DRIVER_STATE_ON := "1"
+WIFI_DRIVER_STATE_OFF := "0"
+
+# Installs the wpa_supplicant init script shipped by external/wpa_supplicant_8
+WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
+
 # VINTF
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 

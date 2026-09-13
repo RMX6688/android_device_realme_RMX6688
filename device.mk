@@ -168,6 +168,11 @@ PRODUCT_PACKAGES += \
     libprocessgroup.vendor \
     libprocessgroup_shim
 
+# Wifi
+PRODUCT_PACKAGES += \
+    wlan_assistant \
+    wpa_supplicant
+
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 35
 
