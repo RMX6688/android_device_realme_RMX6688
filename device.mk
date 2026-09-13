@@ -115,6 +115,10 @@ PRODUCT_PACKAGES += \
     libcppbor_external.vendor \
     libkeymint.vendor
 
+# Bluetooth
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth-service.mediatek
+
 # Wifi
 PRODUCT_PACKAGES += \
     wlan_assistant \

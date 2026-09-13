@@ -600,10 +600,7 @@ vendor/etc/audio_param/VolumeGainMap_ParamUnitDesc.xml
 vendor/etc/audio_param/Volume_ParamUnitDesc.xml
 
 # Bluetooth
-vendor/bin/hw/android.hardware.bluetooth-service-mediatek
-vendor/etc/init/android.hardware.bluetooth-service-mediatek.rc
 vendor/etc/init/bluetooth-finder-service-mediatek.rc
-vendor/etc/vintf/manifest/android.hardware.bluetooth-service-mediatek.xml
 vendor/lib64/libbluetooth_audio_session_mediatek.so
 vendor/lib64/libbluetooth_hw_test.so
 vendor/lib64/libbluetooth_mtk.so
@@ -849,4 +846,6 @@ vendor/firmware/conninfra.cfg
 
 # Connectivity
 vendor/bin/conninfra_loader
+vendor/bin/uart_launcher
+vendor/etc/init/init.btmtk_uart.rc
 vendor/etc/init/init.wlan_drv.rc
