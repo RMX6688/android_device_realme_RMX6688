@@ -727,11 +727,22 @@ vendor/etc/vintf/manifest/lights-mtk-default.xml
 vendor/etc/vintf/manifest/manifest_apuware_utils_aidl.xml
 
 # Wifi
+vendor/bin/hw/android.hardware.wifi-service-lazy:vendor/bin/hw/android.hardware.wifi-service-mtk
+vendor/etc/init/android.hardware.wifi-service-lazy.rc:vendor/etc/init/android.hardware.wifi-service-mtk.rc
+vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so;FIX_SONAME
+vendor/etc/wifi/p2p_supplicant_overlay.conf
+vendor/etc/wifi/wpa_supplicant.conf
+vendor/etc/wifi/wpa_supplicant_overlay.conf
+vendor/etc/wifi/nvram/wfnv_desc_data_6639.bin
+vendor/etc/wifi/nvram/wfnv_desc_data_6653.bin
+vendor/etc/wifi/nvram/wfnv_desc_map_6639.bin
+vendor/etc/wifi/nvram/wfnv_desc_map_6653.bin
 vendor/lib64/android.hardware.tetheroffload-V1-ndk.so
+vendor/lib64/android.hardware.wifi-V2-ndk.so
 vendor/lib64/android.hardware.wifi.common-V1-ndk.so
 vendor/lib64/android.hardware.wifi.hostapd-V2-ndk.so
+vendor/lib64/libwifi-system-iface.so
 vendor/etc/init/android.hardware.tetheroffload-V1-service.rc
-vendor/etc/init/android.hardware.wifi-service-lazy.rc
 
 # Lights
 vendor/lib64/android.hardware.light-V2-ndk.so
@@ -818,3 +829,24 @@ vendor/lib64/vendor.mediatek.hardware.mtkradioex.voice-V1-ndk.so
 vendor/lib64/vendor.oplus.hardware.appradioaidl-V1-ndk.so
 vendor/lib64/vendor.oplus.hardware.communicationcenter-V2-ndk.so
 vendor/lib64/vendor.oplus.hardware.radio-V2-ndk.so
+
+# Firmware
+odm/etc/wifi/txpowerctrl.cfg:vendor/firmware/txpowerctrl.cfg
+odm/etc/wifi/wifi_active_channel.cfg:vendor/firmware/wifi_active_channel.cfg
+odm/etc/wifi/wifi_passive_channel.cfg:vendor/firmware/wifi_passive_channel.cfg
+vendor/firmware/BT_FW.cfg
+vendor/firmware/BT_RAM_CODE_MT6653_1_1_hdr.bin
+vendor/firmware/BT_RAM_CODE_MT6653_2g2a_1_hdr.bin
+vendor/firmware/WIFI_MT6639_PATCH_MCU_new9gen2_1_hdr.bin
+vendor/firmware/WIFI_MT6653_PATCH_MCU_2g2a_1_hdr.bin
+vendor/firmware/WIFI_MT6653_PATCH_MCU_TESTMODE_2g2a_1_hdr.bin
+vendor/firmware/WIFI_MT6653_PHY_RAM_CODE_2g2a_1.bin
+vendor/firmware/WIFI_RAM_CODE_MT6639_new9gen2_1.bin
+vendor/firmware/WIFI_RAM_CODE_MT6653_2g2a_1.bin
+vendor/firmware/WIFI_RAM_CODE_MT6653_TESTMODE_2g2a_1.bin
+vendor/firmware/connfem.cfg
+vendor/firmware/conninfra.cfg
+
+# Connectivity
+vendor/bin/conninfra_loader
+vendor/etc/init/init.wlan_drv.rc

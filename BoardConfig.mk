@@ -147,6 +147,11 @@ SOONG_CONFIG_NAMESPACES += mediatek_gadget
 SOONG_CONFIG_mediatek_gadget += use_custom_usb_gadget_rc
 SOONG_CONFIG_mediatek_gadget_use_custom_usb_gadget_rc := true
 
+# The AOSP wpa_supplicant module only installs its init script when this is set
+# (external/wpa_supplicant_8/board_config_wpa_supplicant.mk); without it the
+# supplicant binary is installed but never started.
+WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
+
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
@@ -200,6 +205,11 @@ BOARD_AVB_ODM_ADD_HASHTREE_FOOTER_ARGS += --hash_algorithm sha256
 BOARD_AVB_VENDOR_DLKM_ADD_HASHTREE_FOOTER_ARGS += --hash_algorithm sha256
 BOARD_AVB_ODM_DLKM_ADD_HASHTREE_FOOTER_ARGS += --hash_algorithm sha256
 BOARD_AVB_SYSTEM_DLKM_ADD_HASHTREE_FOOTER_ARGS += --hash_algorithm sha256
+
+# Wifi
+WIFI_DRIVER_STATE_CTRL_PARAM := "/dev/wmtWifi"
+WIFI_DRIVER_STATE_ON := "1"
+WIFI_DRIVER_STATE_OFF := "0"
 
 # Inherit the proprietary files
 include vendor/realme/RMX6688/BoardConfigVendor.mk

@@ -34,6 +34,11 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
+    ('vendor/bin/hw/android.hardware.wifi-service-mtk'): blob_fixup()
+        .replace_needed('libwifi-hal.so', 'libwifi-hal-mtk.so'),
+    ('vendor/etc/init/android.hardware.wifi-service-mtk.rc'): blob_fixup()
+        .regex_replace(r'/vendor/bin/hw/android\.hardware\.wifi-service-lazy',
+                       '/vendor/bin/hw/android.hardware.wifi-service-mtk'),
     ('vendor/lib64/hw/hwcomposer.mtk_common.so'): blob_fixup()
         .add_needed('libprocessgroup_shim.so'),
 }

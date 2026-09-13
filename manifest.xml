@@ -90,4 +90,9 @@
         <version>2</version>
         <fqname>ISoundTriggerHw/default</fqname>
     </hal>
+    <hal format="aidl">
+        <name>android.hardware.wifi</name>
+        <version>2</version>
+        <fqname>IWifi/default</fqname>
+    </hal>
 </manifest>
