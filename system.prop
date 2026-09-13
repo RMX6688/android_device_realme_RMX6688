@@ -1,5 +1,10 @@
 # Audio
 audio.offload.disable=1
 
+# Bluetooth
+bluetooth.profile.a2dp.source.enabled=true
+bluetooth.profile.avrcp.target.enabled=true
+bluetooth.profile.hfp.ag.enabled=true
+
 # Display
 ro.lib_gui.frame_event_history_size=16

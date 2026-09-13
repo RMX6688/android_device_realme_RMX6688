@@ -655,8 +655,6 @@ vendor/etc/audio_param/VoWVoiceCommand_ParamUnitDesc.xml
 vendor/etc/audio_param/VolumeGainMapUL_ParamUnitDesc.xml
 vendor/etc/audio_param/VolumeGainMap_ParamUnitDesc.xml
 vendor/etc/audio_param/Volume_ParamUnitDesc.xml
-vendor/bin/hw/android.hardware.bluetooth-service-mediatek
-vendor/etc/init/android.hardware.bluetooth-service-mediatek.rc
 
 # Media
 vendor/bin/hw/android.hardware.gnss-service.mediatek
@@ -741,7 +739,6 @@ vendor/lib64/libtrm.so
 
 # Bluetooth
 vendor/etc/init/bluetooth-finder-service-mediatek.rc
-vendor/etc/vintf/manifest/android.hardware.bluetooth-service-mediatek.xml
 vendor/lib64/libbluetooth_audio_session_mediatek.so
 vendor/lib64/libbluetooth_hw_test.so
 vendor/lib64/libbluetooth_mtk.so
@@ -754,6 +751,8 @@ vendor/lib64/android.hardware.bluetooth-V1-ndk.so
 
 # Connectivity
 vendor/bin/conninfra_loader
+vendor/bin/uart_launcher
+vendor/etc/init/init.btmtk_uart.rc
 vendor/etc/init/init.wlan_drv.rc
 
 # Wifi
