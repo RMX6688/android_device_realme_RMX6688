@@ -115,6 +115,22 @@ PRODUCT_PACKAGES += \
     libcppbor_external.vendor \
     libkeymint.vendor
 
+# Audio
+# The stock audio parameter parser service is extracted from the system_ext
+# image (system_ext/bin/hw/android.hardware.audio.parameter_parser.service, see
+# the Audio block in proprietary-files.txt) and links the frozen AIDL audio
+# core interface V3. Our platform only ships the current version of that
+# interface (V4), so build and install the frozen V3 library for it. Everything
+# that library needs (audio.effect-V3, core.sounddose-V3, audio.common-V4,
+# common-V2, common.fmq-V1 and media.audio.common.types-V4) is already built.
+PRODUCT_PACKAGES += \
+    android.hardware.audio.core-V3-ndk \
+    android.hardware.audio.parameter_parser.service.rc \
+    tinycap \
+    tinymix \
+    tinyplay \
+    tinypcminfo
+
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth-service.mediatek

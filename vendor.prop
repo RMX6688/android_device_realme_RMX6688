@@ -1,9 +1,28 @@
 
 # Audio
-ro.vendor.qti.va_aosp.support=0
+aaudio.mmap_exclusive_policy=2
+aaudio.mmap_policy=2
+audio.deep_buffer.media=true
+audio.offload.min.duration.secs=30
+audio.offload.video=true
+audio.tuning.def_path=/odm/etc/audio/audio_param/.
+persist.bluetooth.a2dp_offload.disabled=true
+persist.bluetooth.leaudio_offload.disabled=false
+persist.vendor.audio.tuning.def_path=/odm/etc/audio/audio_param/.
+persist.vendor.audio.usb.offload=false
+persist.vendor.audiohal.hfp.hf.incall_music_on=false
 ro.bluetooth.a2dp_offload.supported=true
 ro.bluetooth.leaudio_offload.supported=true
-persist.bluetooth.a2dp_offload.disabled=true
+ro.config.vc_call_vol_steps=9
+ro.oplus.audio.aidl_volume=true
+ro.vendor.mediatek.platform=MT6991
+ro.vendor.mtk_ps1_rat=N/Lf/Lt/W/G
+ro.vendor.qti.va_aosp.support=0
+vendor.audio.powerhal.power.dl=true
+vendor.audio.powerhal.power.ul=true
+vendor.audio.spatializer.music_bypass=false
+vendor.audio.usb.iems.period_us=5000
+vendor.audio.usb.super_hifi=true
 # Keystore
 ro.hardware.kmsetkey=trustonic
 
@@ -228,6 +247,7 @@ ro.vendor.mtk_tee_gp_support=1
 ro.vendor.mtk.gpu.service=1
 
 # Connectivity
+persist.vendor.bluetooth.leaudio_mode=ums-cg
 persist.vendor.connsys.chipid=-1
 persist.vendor.connsys.dynamic.dump=0
 persist.vendor.connsys.patch.version=-1

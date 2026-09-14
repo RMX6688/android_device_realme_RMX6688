@@ -101,3 +101,14 @@ prebuilt_etc {
     relative_install_path: "init/hw",
     vendor: true,
 }
+
+// Stock (unmodified) system_ext init script of the MTK audio parameter parser
+// service. The service binary itself is extracted from the stock image, see
+// the Audio block in proprietary-files.txt. init parses /system_ext/etc/init
+// at top level, hence no "hw" install path.
+prebuilt_etc {
+    name: "android.hardware.audio.parameter_parser.service.rc",
+    src: "android.hardware.audio.parameter_parser.service.rc",
+    relative_install_path: "init",
+    system_ext_specific: true,
+}
