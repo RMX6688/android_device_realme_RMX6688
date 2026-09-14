@@ -37,6 +37,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
 
+# Audio
+# The extracted parameter parser service links the frozen V3 audio core interface
+PRODUCT_PACKAGES += \
+    android.hardware.audio.core-V3-ndk \
+    tinycap \
+    tinymix \
+    tinyplay \
+    tinypcminfo
+
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth-service.mediatek

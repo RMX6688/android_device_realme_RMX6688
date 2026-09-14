@@ -1,5 +1,11 @@
 # Audio
 audio.offload.disable=1
+ro.audio.flinger_standbytime_ms=1000
+ro.audio.ihaladaptervendorextension_enabled=true
+ro.audio.silent=0
+ro.audio.spatializer_enabled=true
+ro.audio.spatializer_type=oplus
+ro.audio.usb.period_us=16000
 
 # Bluetooth
 bluetooth.profile.a2dp.source.enabled=true
