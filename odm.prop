@@ -1,6 +1,8 @@
 # Build
 ro.build.display.id=RMX6688_11_A.01
 ro.build.display.id_ims=RMX6688_11_A.01_250815
+ro.product.hw=24618
+ro.soc.manufacturer=Mediatek
 
 # Display
 persist.vendor.sys.pq.disp.dither.bypass=1
@@ -18,3 +20,7 @@ ro.vendor.oplus.display.cwb.roi=1
 ro.vendor.pq.update_gamma=1
 vendor.display.uir_support=1
 vendor.oplus.display.global.dre_status=1
+
+# Radio
+ro.vendor.mtk_md1_support=22
+ro.vendor.mtk_md3_support=0

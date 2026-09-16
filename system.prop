@@ -15,5 +15,11 @@ bluetooth.profile.hfp.ag.enabled=true
 # Display
 ro.lib_gui.frame_event_history_size=16
 
+# Logging
+ro.vendor.customer_logpath=/data
+
 # Radio
 persist.radio.hvolte.enable=1
+ro.mediatek.version.branch=alps-mp-b0.mssi1.tc16sp-pr1
+vendor.rild.libargs=-d /dev/ttyC0
+vendor.rild.libpath=mtk-ril.so

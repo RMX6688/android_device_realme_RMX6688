@@ -128,7 +128,9 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
+    CarrierConfigOverlayRMX6688 \
     FrameworksResOverlayRMX6688 \
+    MssiFrameworkTelephonyOverlay \
     SettingsOverlayRMX6688 \
     SystemUIResOverlayRMX6688 \
     TelephonyOverlayRMX6688
