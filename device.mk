@@ -120,6 +120,12 @@ PRODUCT_PACKAGES += \
     libcppbor_external.vendor \
     libkeymint.vendor
 
+# Overlays
+PRODUCT_PACKAGES += \
+    FrameworksResOverlayRMX6688 \
+    SettingsOverlayRMX6688 \
+    SystemUIResOverlayRMX6688
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
