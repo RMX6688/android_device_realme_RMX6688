@@ -48,6 +48,12 @@ PRODUCT_PACKAGES += \
     create_pl_dev \
     create_pl_dev.recovery
 
+# Overlays
+PRODUCT_PACKAGES += \
+    FrameworksResRMX6688 \
+    SettingsOverlayRMX6688 \
+    SystemUIResRMX6688
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.memtrack-service.mediatek
