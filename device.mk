@@ -50,10 +50,15 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
+    CarrierConfigRMX6688 \
     FrameworksResRMX6688 \
     SettingsOverlayRMX6688 \
     SystemUIResRMX6688 \
     TelephonyOverlayRMX6688
+
+# Telephony overlay (hardware/mediatek)
+PRODUCT_PACKAGES += \
+    MssiFrameworkTelephonyOverlay
 
 # Display
 PRODUCT_PACKAGES += \

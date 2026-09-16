@@ -2,6 +2,7 @@
 
 # AEE
 vendor/lib64/libaedv.so
+vendor/lib64/vendor.mediatek.hardware.aee-V1-ndk.so
 
 # NVRAM
 vendor/bin/nvram_daemon
@@ -155,7 +156,6 @@ vendor/lib64/libtinyxml2.so
 vendor/lib64/libgpu_aux.so
 vendor/lib64/vendor.mediatek.hardware.mms-V1-ndk.so
 vendor/lib64/libsensorndkbridge.so
-vendor/lib64/libbinder.so
 vendor/lib64/libhidlbase.so
 vendor/lib64/libhidlmemory.so
 vendor/lib64/android.hidl.allocator@1.0.so
@@ -210,10 +210,13 @@ vendor/lib64/vendor.mediatek.hardware.mmagent@1.1.so
 vendor/lib64/mt6991/libmmagent.so;SYMLINK=vendor/lib64/libmmagent.so
 vendor/lib64/mt6991/libneuron_runtime.8.so;SYMLINK=vendor/lib64/libneuron_runtime.8.so
 vendor/bin/hw/vendor.mediatek.hardware.mmagent-service
+vendor/lib64/vendor.mediatek.framework.mtksf_ext-V2-ndk.so
 
 # mbrain
 vendor/lib64/libmbrainSDKv.so
 vendor/lib64/vendor.mediatek.hardware.mbrain-V3-ndk.so
+vendor/lib64/vendor.mediatek.hardware.mbrain-V6-ndk.so
+vendor/lib64/vendor.mediatek.hardware.mbrainj-V1-ndk.so
 
 # Display (AAL)
 vendor/lib64/libaal_cust.so
@@ -380,6 +383,7 @@ odm/lib64/hw/libvirtualaudio.so
 odm/lib64/vendor.oplus.hardware.virtual_device.audio-V1-ndk.so
 odm/lib64/vendor.oplus.hardware.virtual_device.audio-impl.so
 vendor/etc/vintf/manifest/bluetooth_audio.xml
+vendor/etc/vintf/manifest/CommandService.xml
 vendor/lib64/libaudioutils.so
 vendor/bin/hw/android.hardware.audio.service-aidl.mediatek
 vendor/lib64/android.hardware.audio.common-V3-ndk.so
@@ -442,7 +446,7 @@ odm/etc/oplusmetaaudio/SPAT_AUDIOX_ROOMMODEL_MOVIE.bin
 odm/etc/oplusmetaaudio/SPAT_AUDIOX_ROOMMODEL_MUSIC.bin
 odm/etc/spatializer/SPAT_AUDIOX_ROOMMODEL_MOVIE.bin
 odm/etc/spatializer/SPAT_AUDIOX_ROOMMODEL_MUSIC.bin
-odm/etc/vintf/telephony_manifest_dsds.xml
+odm/etc/vintf/telephony_manifest_dsds.xml:odm/etc/vintf/manifest/telephony_manifest.xml
 odm/etc/vintf/telephony_manifest_ssss.xml
 odm/etc/virtual_audio_policy_configuration.xml
 vendor/etc/AudioDump_dynamic.ds
@@ -625,7 +629,10 @@ vendor/lib64/libbluetooth_mtk_pure.so
 vendor/lib64/libbluetooth_relayer.so
 vendor/lib64/libbluetoothem_mtk.so
 vendor/lib64/libbt-vendor.so
+vendor/lib64/android.hardware.bluetooth.finder-V1-ndk.so
+vendor/lib64/android.hardware.bluetooth-V1-ndk.so
 
+# Display (Panel)
 vendor/etc/displayconfig/display_id_4627039422300187648.xml
 vendor/etc/panel-nt37801-cmd-120hz_dbi.bin
 vendor/etc/panel-nt37801-cmd-120hz_dmr_binset.bin
@@ -643,6 +650,7 @@ vendor/lib64/vendor.mediatek.hardware.gnss.batching-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.lbs-V1-ndk.so
 vendor/etc/init/mtk_gnss.rc
 vendor/lib64/hw/gps.default.so
+vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so
 
 # GPU
 vendor/bin/hw/vendor.mediatek.hardware.gpuserv-service
@@ -698,6 +706,14 @@ vendor/lib64/libcodec2_vpp_qt_plugin.so
 vendor/lib64/libcodec2_vpp_rs_plugin.so
 vendor/lib64/libvcodec_oal.so
 vendor/lib64/libvcodecdrv_header_stub.so
+vendor/lib64/android.hardware.media.c2@1.0.so
+vendor/lib64/android.hardware.media.c2@1.1.so
+vendor/lib64/android.hidl.token@1.0-utils.so
+vendor/lib64/android.hidl.token@1.0.so
+vendor/lib64/libavservices_minijail.so
+vendor/lib64/libformatter.so
+vendor/lib64/libstagefright_bufferqueue_helper.so
+vendor/lib64/libthha.so
 
 # Misc
 vendor/lib64/libHEVCdec_sa.ca7.android.so
@@ -762,18 +778,9 @@ vendor/etc/init/android.hardware.tetheroffload-V1-service.rc
 vendor/lib64/android.hardware.light-V2-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mtklight-V1-ndk.so
 
-# Bluetooth
-vendor/lib64/android.hardware.bluetooth.finder-V1-ndk.so
-vendor/lib64/android.hardware.bluetooth-V1-ndk.so
-
-# HAL interface libraries
-vendor/lib64/android.hardware.secure_element-V1-ndk.so
-vendor/lib64/android.hidl.token@1.0-utils.so
-vendor/lib64/android.hidl.token@1.0.so
-vendor/lib64/libavservices_minijail.so
+# Platform libraries
 vendor/lib64/libcap.so
 vendor/lib64/libdumpstateutil.so
-vendor/lib64/libformatter.so
 vendor/lib64/libhfmanager.so
 vendor/lib64/libhfmanagerwrapper.so
 vendor/lib64/libhwm-oplus-odm.so
@@ -787,22 +794,26 @@ vendor/lib64/libmtkutils.so
 vendor/lib64/libnl.so
 vendor/lib64/libprotobuf-cpp-full-21.12.so
 vendor/lib64/libprotobuf-cpp-lite-21.12.so
-vendor/lib64/libstagefright_bufferqueue_helper.so
-vendor/lib64/libthha.so
 vendor/lib64/libtrm.so
-vendor/lib64/nwk_opt_imp.so
-vendor/lib64/vendor.mediatek.framework.mtksf_ext-V2-ndk.so
-vendor/lib64/vendor.mediatek.hardware.aee-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.mbrain-V6-ndk.so
-vendor/lib64/vendor.mediatek.hardware.mbrainj-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.netdagent-V1-ndk.so
-vendor/lib64/vendor.mediatek.hardware.netdagent@1.0.so
-vendor/lib64/vendor.mediatek.hardware.nwk_opt_new-V1-ndk.so
-vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so
-vendor/lib64/android.hardware.media.c2@1.0.so
+
+# Secure Element
+vendor/lib64/android.hardware.secure_element-V1-ndk.so
 
 # Radio
 odm/lib/lib-virtual-modem-protos.so
+odm/lib64/lib-virtual-modem-protos.so
+odm/bin/init.subsys.sh
+odm/bin/hw/subsys_daemon
+odm/etc/init/subsys_daemon.rc
+odm/lib64/libmtk-radio-service.so
+odm/lib64/libradio-service.so
+odm/lib64/libradioapis.so
+odm/lib64/libsubsys-service.so
+odm/lib64/libsubsys-utils.so
+odm/lib64/vendor.oplus.hardware.subsys-V5-ndk.so
+odm/lib64/vendor.oplus.hardware.subsys_radio-V9-ndk.so
+odm/lib64/libmindroid-framework.so
+odm/lib64/libmindroid-app.so
 odm/lib64/libcommcenterfw.so
 odm/lib64/libcommcenterutils.so
 odm/lib64/libdmtp-protos-lite.so
@@ -843,6 +854,40 @@ vendor/lib64/vendor.mediatek.hardware.mtkradioex.voice-V1-ndk.so
 vendor/lib64/vendor.oplus.hardware.appradioaidl-V1-ndk.so
 vendor/lib64/vendor.oplus.hardware.communicationcenter-V2-ndk.so
 vendor/lib64/vendor.oplus.hardware.radio-V2-ndk.so
+vendor/bin/hw/mtkfusionrild
+vendor/lib64/libmtk-ril.so
+vendor/lib64/libmtkmipc-ril.so
+vendor/lib64/libmtknetutils.so
+vendor/lib64/libmtksysutils.so
+vendor/lib64/libmtktinyxml.so
+vendor/bin/ccci_mdinit
+vendor/bin/ccci_rpcd
+vendor/bin/md_monitor
+vendor/bin/md_monitor_ctrl
+vendor/etc/init/init.cccimdinit.rc
+vendor/etc/init/init.cccirpcd.rc
+vendor/etc/init/md_monitor.rc
+vendor/lib64/libccci_util.so
+vendor/lib64/libstorage_otp.so
+vendor/lib64/libsysenv.so
+vendor/bin/muxreport
+vendor/bin/gsm0710muxd
+vendor/etc/init/muxreport.rc
+vendor/etc/init/gsm0710muxd.rc
+system_ext/bin/emdlogger
+system_ext/etc/init/emdlogger.rc
+system_ext/lib64/libccci_util_sys.so
+system_ext/lib64/libmdloggerrecycle.so
+vendor/bin/netdagent
+vendor/lib64/libforkexecwrap.so
+vendor/lib64/libifcutils_mtk.so
+vendor/etc/init/netdagent.rc
+vendor/bin/volte_clientapi_ua
+vendor/etc/init/volte_clientapi_ua.rc
+vendor/lib64/nwk_opt_imp.so
+vendor/lib64/vendor.mediatek.hardware.netdagent-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.netdagent@1.0.so
+vendor/lib64/vendor.mediatek.hardware.nwk_opt_new-V1-ndk.so
 
 # IMS
 system_ext/etc/sysconfig/com.mediatek.ims.config.xml

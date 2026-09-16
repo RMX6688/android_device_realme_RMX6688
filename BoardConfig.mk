@@ -69,6 +69,10 @@ TARGET_SCREEN_DENSITY := 560
 
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
+
+# RIL (the vendor RIL service is MediaTek's mtkfusionrild)
+ENABLE_VENDOR_RIL_SERVICE := true
+
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     hardware/mediatek/vintf/mediatek_framework_compatibility_matrix.xml \
     $(DEVICE_PATH)/device_framework_matrix.xml
@@ -151,6 +155,9 @@ SOONG_CONFIG_mediatek_gadget_use_custom_usb_gadget_rc := true
 # (external/wpa_supplicant_8/board_config_wpa_supplicant.mk); without it the
 # supplicant binary is installed but never started.
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
+
+# Filesystem
+TARGET_FS_CONFIG_GEN += $(DEVICE_PATH)/config.fs
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
