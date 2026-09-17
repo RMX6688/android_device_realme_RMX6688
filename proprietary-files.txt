@@ -1592,3 +1592,9 @@ vendor/lib64/nwk_opt_imp.so
 vendor/lib64/vendor.mediatek.hardware.netdagent-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.netdagent@1.0.so
 vendor/lib64/vendor.mediatek.hardware.nwk_opt_new-V1-ndk.so
+
+# IMS
+system_ext/etc/sysconfig/com.mediatek.ims.config.xml
+system_ext/framework/mediatek-ims-base.jar;BOOT_JAR
+system_ext/framework/mediatek-ims-common.jar;BOOT_JAR
+system_ext/priv-app/ImsService/ImsService.apk

@@ -87,6 +87,12 @@ PRODUCT_PACKAGES += \
     libhwbinder \
     libhwbinder.vendor
 
+# IMS
+# The stock com.mediatek.ims app is the IMS implementation; its vendor jars are
+# extracted as boot jars and the app is trimmed by blob-patches/ImsService.patch.
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/permissions/privapp-permissions-com.mediatek.ims.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-com.mediatek.ims.xml
+
 # Init
 PRODUCT_PACKAGES += \
     fstab.mt6991 \
@@ -124,7 +130,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     FrameworksResOverlayRMX6688 \
     SettingsOverlayRMX6688 \
-    SystemUIResOverlayRMX6688
+    SystemUIResOverlayRMX6688 \
+    TelephonyOverlayRMX6688
 
 # Permissions
 PRODUCT_COPY_FILES += \

@@ -14,3 +14,6 @@ bluetooth.profile.hfp.ag.enabled=true
 
 # Display
 ro.lib_gui.frame_event_history_size=16
+
+# Radio
+persist.radio.hvolte.enable=1

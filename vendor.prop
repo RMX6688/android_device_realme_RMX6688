@@ -164,6 +164,15 @@ vendor.mtk.hwc.HWC_PLAT_SWITCH_GET_FBT_CACHE_HIT=1
 graphics.gpu.profiler.support=true
 ro.vendor.mtk.gpu.service=1
 
+# IMS
+persist.vendor.ims_support=1
+persist.vendor.mims_support=2
+persist.vendor.mtk.volte.enable=1
+persist.vendor.mtk_ct_volte_support=3
+persist.vendor.mtk_dynamic_ims_switch=1
+persist.vendor.volte_support=1
+ro.vendor.md_auto_setup_ims=1
+
 # Keystore
 ro.hardware.kmsetkey=trustonic
 
