@@ -52,7 +52,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     FrameworksResRMX6688 \
     SettingsOverlayRMX6688 \
-    SystemUIResRMX6688
+    SystemUIResRMX6688 \
+    TelephonyOverlayRMX6688
 
 # Display
 PRODUCT_PACKAGES += \
@@ -145,6 +146,23 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     wlan_assistant \
     wpa_supplicant
+
+# IMS
+#
+# The IMS implementation of this platform is the stock app (com.mediatek.ims).
+# Its vendor jar dependencies (mediatek-ims-base / mediatek-ims-common, which
+# carry the com.mediatek.ims.internal interfaces it implements) are extracted as
+# boot jars. Everything else it used to link against -- the vendor's telephony
+# extension classes, the vendor's com.oplus framework classes and the
+# TelephonyMetrics class the AOSP 16 tree no longer has -- is removed from the
+# app itself by blob-patches/ImsService.patch, so nothing has to be added to the
+# platform for it.
+#
+# The app declares the standard AOSP IMS service interface, so the phone app
+# only has to be pointed at it (see overlay/TelephonyOverlayRMX6688).
+# Video telephony and the GBA service are not part of this stack yet.
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/permissions/privapp-permissions-com.mediatek.ims.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-com.mediatek.ims.xml
 
 # Permissions
 PRODUCT_COPY_FILES += \

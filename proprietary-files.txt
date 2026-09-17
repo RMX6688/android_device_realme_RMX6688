@@ -844,6 +844,12 @@ vendor/lib64/vendor.oplus.hardware.appradioaidl-V1-ndk.so
 vendor/lib64/vendor.oplus.hardware.communicationcenter-V2-ndk.so
 vendor/lib64/vendor.oplus.hardware.radio-V2-ndk.so
 
+# IMS
+system_ext/etc/sysconfig/com.mediatek.ims.config.xml
+system_ext/framework/mediatek-ims-base.jar;BOOT_JAR
+system_ext/framework/mediatek-ims-common.jar;BOOT_JAR
+system_ext/priv-app/ImsService/ImsService.apk
+
 # Firmware
 odm/etc/wifi/txpowerctrl.cfg:vendor/firmware/txpowerctrl.cfg
 odm/etc/wifi/wifi_active_channel.cfg:vendor/firmware/wifi_active_channel.cfg

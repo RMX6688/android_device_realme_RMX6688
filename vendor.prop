@@ -246,6 +246,18 @@ ro.vendor.mtk_tee_gp_support=1
 # GPU
 ro.vendor.mtk.gpu.service=1
 
+# IMS
+#
+# Mirrored from the stock vendor build.prop. persist.vendor.vilte_support is
+# left out because the video telephony stack is not part of this port.
+persist.vendor.ims_support=1
+persist.vendor.mims_support=2
+persist.vendor.mtk.volte.enable=1
+persist.vendor.mtk_ct_volte_support=3
+persist.vendor.mtk_dynamic_ims_switch=1
+persist.vendor.volte_support=1
+ro.vendor.md_auto_setup_ims=1
+
 # Connectivity
 persist.vendor.bluetooth.leaudio_mode=ums-cg
 persist.vendor.connsys.chipid=-1

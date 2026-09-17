@@ -34,6 +34,8 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
+    'system_ext/priv-app/ImsService/ImsService.apk': blob_fixup()
+        .apktool_patch('blob-patches/ImsService.patch'),
     ('vendor/bin/hw/android.hardware.wifi-service-mtk'): blob_fixup()
         .replace_needed('libwifi-hal.so', 'libwifi-hal-mtk.so'),
     ('vendor/etc/init/android.hardware.wifi-service-mtk.rc'): blob_fixup()
