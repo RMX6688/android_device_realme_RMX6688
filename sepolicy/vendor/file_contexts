@@ -1,3 +1,7 @@
 /vendor/bin/hw/android\.hardware\.security\.keymint@.*-service\.trustonic u:object_r:hal_keymint_default_exec:s0
 /vendor/bin/init\.selinux\.sh u:object_r:setenforce_sh_exec:s0
 /vendor/bin/hw/android\.hardware\.wifi-service-mtk u:object_r:hal_wifi_default_exec:s0
+/odm/bin/hw/android\.hardware\.nfc-service-tms u:object_r:hal_nfc_default_exec:s0
+/odm/bin/hw/android\.hardware\.secure_element-service-tms u:object_r:hal_secure_element_default_exec:s0
+/dev/tms_nfc u:object_r:nfc_device:s0
+/dev/tms_ese u:object_r:secure_element_device:s0
