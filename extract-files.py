@@ -42,7 +42,7 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace(r'/vendor/bin/hw/android\.hardware\.wifi-service-lazy',
                        '/vendor/bin/hw/android.hardware.wifi-service-mtk'),
     ('vendor/lib64/hw/hwcomposer.mtk_common.so'): blob_fixup()
-        .add_needed('libprocessgroup_shim.so'),
+        .add_needed('libprocessgroup.so'),
 }
 
 module = ExtractUtilsModule(

@@ -303,6 +303,14 @@ persist.vendor.mtk_dynamic_ims_switch=1
 persist.vendor.volte_support=1
 ro.vendor.md_auto_setup_ims=1
 
+# Camera
+ro.vendor.camera.directfdyuv.support=1
+ro.vendor.camera.insensorzoom.support=0
+ro.vendor.camera.isp.support.colorspace=0
+ro.vendor.camera3.zsl.default=260
+ro.vendor.camera3.zsl.project=-130
+ro.vendor.mtk_camera_app_version=3
+
 # Connectivity
 persist.vendor.bluetooth.leaudio_mode=ums-cg
 persist.vendor.connsys.chipid=-1
