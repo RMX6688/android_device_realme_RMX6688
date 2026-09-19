@@ -12,5 +12,6 @@ ro.audio.usb.period_us=16000
 ro.lib_gui.frame_event_history_size=16
 ro.mediatek.version.branch=alps-mp-b0.mssi1.tc16sp-pr1
 ro.vendor.customer_logpath=/data
+sys.brightness.disable_gamma_conversion=1
 vendor.rild.libargs=-d /dev/ttyC0
 vendor.rild.libpath=mtk-ril.so
