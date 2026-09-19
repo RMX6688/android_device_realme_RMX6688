@@ -69,6 +69,12 @@
     <integer name="config_autoBrightnessBrighteningLightDebounce">1000</integer>
     <integer name="config_autoBrightnessDarkeningLightDebounce">1500</integer>
 
+    <!-- Brightness slider range, mirrored from the stock framework overlays (minimum comes from
+         the priority 700 project overlay, default/maximum from FrameworkResOverlay). -->
+    <dimen name="config_screenBrightnessSettingMinimumFloat">0.016</dimen>
+    <dimen name="config_screenBrightnessSettingDefaultFloat">0.4</dimen>
+    <dimen name="config_screenBrightnessSettingMaximumFloat">1.0</dimen>
+
     <!-- Ambient light levels at which the LCD backlight is switched to the next value of
          config_autoBrightnessLcdBacklightValues. There must be exactly one entry more in
          config_autoBrightnessLcdBacklightValues than here.

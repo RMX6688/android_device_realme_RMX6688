@@ -14,6 +14,7 @@ bluetooth.profile.hfp.ag.enabled=true
 
 # Display
 ro.lib_gui.frame_event_history_size=16
+sys.brightness.disable_gamma_conversion=1
 
 # Logging
 ro.vendor.customer_logpath=/data
