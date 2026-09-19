@@ -221,6 +221,12 @@ ro.vendor.radio.max.multisim=dsds
 ro.vendor.ril.set_sbp_place=0
 ro.vendor.sim_me_lock_mode=3
 
+# Sensors
+ro.vendor.mtk.sensor.support=yes
+ro.vendor.oplus.sensor.high_pwm_rgb=true
+ro.vendor.oplus.sensor.report_brightness=true
+ro.vendor.oplus.sensor.use_blank_mode=true
+
 # SurfaceFlinger
 debug.sf.disable_backpressure=1
 debug.sf.early.app.duration=20000000
