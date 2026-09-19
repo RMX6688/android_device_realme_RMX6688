@@ -53,4 +53,51 @@
          rates are available from hardware composer. Only has an effect if the value is
          non-zero. -->
     <integer name="config_defaultPeakRefreshRate">144</integer>
+
+    <!-- Whether the automatic brightness (adaptive brightness) feature is available. When true,
+         the framework tracks the ambient light sensor and exposes the Settings toggle. -->
+    <bool name="config_automatic_brightness_available">true</bool>
+
+    <!-- String type of the ambient light sensor used by the display stack. The HAL does not
+         expose android.sensor.light at all; this channel is the only one that tracks ambient
+         light (the stock framework fuses its raw channels itself, which an AOSP framework
+         cannot do). -->
+    <string name="config_displayLightSensorType" translatable="false">android.sensor.pwm_rgb</string>
+
+    <!-- Adaptive brightness response. The framework defaults (4000/8000 ms) are too slow to
+         follow the composite channel the HAL reports. -->
+    <integer name="config_autoBrightnessBrighteningLightDebounce">1000</integer>
+    <integer name="config_autoBrightnessDarkeningLightDebounce">1500</integer>
+
+    <!-- Ambient light levels at which the LCD backlight is switched to the next value of
+         config_autoBrightnessLcdBacklightValues. There must be exactly one entry more in
+         config_autoBrightnessLcdBacklightValues than here.
+
+         The stock curve (128 ... 18432) is calibrated for the physical lux the stock light
+         fusion publishes, which this framework never sees; the HAL reports a composite of
+         ambient light and panel leakage instead (single digits in a dark room, thousands under
+         a torch), so these levels are measured on the device. -->
+    <array name="config_autoBrightnessLevels">
+        <item>20</item>
+        <item>45</item>
+        <item>90</item>
+        <item>180</item>
+        <item>400</item>
+        <item>1000</item>
+        <item>3000</item>
+        <item>8000</item>
+    </array>
+
+    <!-- LCD backlight (0-255) for each interval delimited by config_autoBrightnessLevels. -->
+    <array name="config_autoBrightnessLcdBacklightValues">
+        <item>8</item>
+        <item>22</item>
+        <item>40</item>
+        <item>62</item>
+        <item>92</item>
+        <item>135</item>
+        <item>190</item>
+        <item>230</item>
+        <item>255</item>
+    </array>
 </resources>
