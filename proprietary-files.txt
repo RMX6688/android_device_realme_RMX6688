@@ -684,7 +684,6 @@ vendor/etc/init/android.hardware.usb.gadget-aidl-service.mediatek.rc
 vendor/etc/permissions/com.mediatek.hardware.vow.xml
 vendor/etc/permissions/com.mediatek.hardware.vow_dsp.xml
 vendor/etc/vintf/manifest/manifest_media_c2_default.xml
-vendor/lib64/hw/sensors.mediatek.V2.0.so
 vendor/lib64/libcodec2.so
 vendor/lib64/libcodec2_aidl.so
 vendor/lib64/libcodec2_fsr.so
@@ -739,10 +738,17 @@ vendor/lib64/vendor.mediatek.hardware.mtkpower-V3-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mtkpower_applist-V2-ndk.so
 
 # Sensors
+vendor/bin/hw/android.hardware.sensors-service.multihal
 vendor/etc/init/android.hardware.sensors-service-multihal.rc
+vendor/etc/sensors/hals.conf
+vendor/lib64/android.hardware.sensors@2.0-ScopedWakelock.so
+vendor/lib64/android.hardware.sensors@2.1.so
+vendor/lib64/hw/android.hardware.sensors@2.X-subhal-mediatek.so
 vendor/lib64/hw/mtkflp.default.so
 vendor/lib64/hw/mtkgeofence.default.so
 vendor/lib64/hw/sensors.dynamic_sensor_hal.so
+vendor/lib64/hw/sensors.mediatek.V2.0.so;SYMLINK=vendor/lib64/hw/sensors.mt6991.so
+vendor/lib64/libhidparser.so
 
 # USB
 vendor/bin/hw/android.hardware.usb-aidl-service.mediatekv1.0

@@ -327,3 +327,9 @@ ro.vendor.wlan.gen=gen4m_6991_6653
 ro.vendor.wlan.standalone.log=y
 vendor.connsys.driver.ready=no
 vendor.connsys.gps_dump_support=yes
+
+# Sensors
+ro.vendor.mtk.sensor.support=yes
+ro.vendor.oplus.sensor.high_pwm_rgb=true
+ro.vendor.oplus.sensor.report_brightness=true
+ro.vendor.oplus.sensor.use_blank_mode=true

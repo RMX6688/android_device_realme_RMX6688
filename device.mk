@@ -171,6 +171,7 @@ PRODUCT_COPY_FILES += \
 
 # VINTF
 PRODUCT_PACKAGES += \
+    android.hardware.sensors-multihal.xml \
     manifest_camera_atms.xml \
     manifest_camera_bgservice.xml
 
