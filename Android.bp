@@ -6,3 +6,15 @@
 
 soong_namespace {
 }
+
+vintf_fragment {
+    name: "manifest_camera_atms.xml",
+    src: "configs/vintf/manifest_camera_atms.xml",
+    vendor: true,
+}
+
+vintf_fragment {
+    name: "manifest_camera_bgservice.xml",
+    src: "configs/vintf/manifest_camera_bgservice.xml",
+    vendor: true,
+}

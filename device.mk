@@ -196,6 +196,11 @@ PRODUCT_PACKAGES += \
     libprocessgroup.vendor \
     libprocessgroup_shim
 
+# VINTF
+PRODUCT_PACKAGES += \
+    manifest_camera_atms.xml \
+    manifest_camera_bgservice.xml
+
 # Wifi
 PRODUCT_PACKAGES += \
     wlan_assistant \

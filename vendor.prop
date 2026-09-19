@@ -25,6 +25,14 @@ ro.bluetooth.a2dp_offload.supported=true
 ro.bluetooth.leaudio_offload.supported=true
 ro.vendor.bt.connac3=yes
 
+# Camera
+ro.vendor.camera.directfdyuv.support=1
+ro.vendor.camera.insensorzoom.support=0
+ro.vendor.camera.isp.support.colorspace=0
+ro.vendor.camera3.zsl.default=260
+ro.vendor.camera3.zsl.project=-130
+ro.vendor.mtk_camera_app_version=3
+
 # Connectivity
 persist.vendor.connsys.chipid=-1
 persist.vendor.connsys.dynamic.dump=0
