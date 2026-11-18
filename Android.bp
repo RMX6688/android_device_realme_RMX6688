@@ -18,3 +18,9 @@ vintf_fragment {
     src: "configs/vintf/manifest_camera_bgservice.xml",
     vendor: true,
 }
+
+vintf_fragment {
+    name: "manifest_radio_config.xml",
+    src: "configs/vintf/manifest_radio_config.xml",
+    vendor: true,
+}

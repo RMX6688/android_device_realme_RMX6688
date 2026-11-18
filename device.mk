@@ -201,7 +201,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors-multihal.xml \
     manifest_camera_atms.xml \
-    manifest_camera_bgservice.xml
+    manifest_camera_bgservice.xml \
+    manifest_radio_config.xml
 
 # Vendor service manager
 PRODUCT_PACKAGES += \
