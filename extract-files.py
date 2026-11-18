@@ -27,6 +27,8 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
+    'odm/bin/hw/vendor.oplus.hardware.biometrics.fingerprint@2.1-service_uff': blob_fixup()
+        .add_needed('libshims_aidl_fingerprint_v3.oplus.so'),
     'system_ext/priv-app/ImsService/ImsService.apk': blob_fixup()
         .apktool_patch('blob-patches/ImsService.patch'),
     'vendor/bin/hw/android.hardware.wifi-service-mtk': blob_fixup()

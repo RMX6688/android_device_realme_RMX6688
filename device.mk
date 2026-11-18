@@ -194,13 +194,18 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.frameworks.stats-V1-ndk.vendor \
     libprocessgroup.vendor \
-    libprocessgroup_shim
+    libprocessgroup_shim \
+    libshims_aidl_fingerprint_v3.oplus
 
 # VINTF
 PRODUCT_PACKAGES += \
     android.hardware.sensors-multihal.xml \
     manifest_camera_atms.xml \
     manifest_camera_bgservice.xml
+
+# Vendor service manager
+PRODUCT_PACKAGES += \
+    vndservicemanager
 
 # Wifi
 PRODUCT_PACKAGES += \
@@ -213,7 +218,8 @@ PRODUCT_SHIPPING_API_LEVEL := 35
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/mediatek
+    hardware/mediatek \
+    hardware/oplus
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/realme/RMX6688/RMX6688-vendor.mk)

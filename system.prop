@@ -19,6 +19,11 @@ sys.brightness.disable_gamma_conversion=1
 # Logging
 ro.vendor.customer_logpath=/data
 
+# Project
+ro.oplus.image.my_engineering.type=release
+ro.oplus.image.system_ext.area=domestic
+ro.separate.soft=24618
+
 # Radio
 persist.radio.hvolte.enable=1
 ro.mediatek.version.branch=alps-mp-b0.mssi1.tc16sp-pr1

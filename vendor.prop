@@ -168,6 +168,24 @@ ro.vendor.pq.mtk_ultra_resolution_support=1
 ro.vendor.pq.mtk_video_transition=0
 vendor.mtk.hwc.HWC_PLAT_SWITCH_GET_FBT_CACHE_HIT=1
 
+# Fingerprint
+persist.vendor.fingerprint.brightness.strategy=hbm
+persist.vendor.fingerprint.brightness.threshold=5451
+persist.vendor.fingerprint.fp_id=G_DOLPHIN_GUM_uff
+persist.vendor.fingerprint.optical.circlenumber=10
+persist.vendor.fingerprint.optical.iconlocation=720
+persist.vendor.fingerprint.optical.iconnumber=21
+persist.vendor.fingerprint.optical.iconsize=195
+persist.vendor.fingerprint.optical.sensorlocation=640::2080
+persist.vendor.fingerprint.optical.sensorrotation=77.5
+persist.vendor.fingerprint.optical.support=1
+persist.vendor.fingerprint.sensor_type=ultrasonic
+persist.vendor.fingerprint.version=UFF V1.0.0.0
+ro.vendor.oplus.version=cn
+vendor.fingerprint.aidl.support=1
+vendor.fingerprint.cali=1
+vendor.fingerprint.meminfo=1
+
 # GPU
 graphics.gpu.profiler.support=true
 ro.vendor.mtk.gpu.service=1
