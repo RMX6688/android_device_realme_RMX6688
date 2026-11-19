@@ -1,0 +1,82 @@
+# Biometrics
+
+# Touch HAL
+type hal_oplus_touch, domain;
+type hal_oplus_touch_exec, exec_type, vendor_file_type, file_type;
+type hal_oplus_touch_service, service_manager_type;
+init_daemon_domain(hal_oplus_touch)
+
+allow hal_oplus_touch hal_oplus_touch_service:service_manager { add find };
+binder_call(hal_oplus_touch, servicemanager)
+binder_call(hal_oplus_touch, system_server)
+binder_call(hal_oplus_touch, vndservicemanager)
+
+allow hal_oplus_touch vendor_file:file r_file_perms;
+allow hal_oplus_touch vendor_file:file execute;
+allow hal_oplus_touch same_process_hal_file:file execute;
+allow hal_oplus_touch proc:file rw_file_perms;
+allow hal_oplus_touch sysfs:file rw_file_perms;
+allow hal_oplus_touch tcm_hbp_device:chr_file rw_file_perms;
+allow hal_oplus_touch vndbinder_device:chr_file { open read write ioctl map };
+allow hal_oplus_touch oplus_touch_data_file:dir { open getattr read search add_name write remove_name };
+allow hal_oplus_touch oplus_touch_data_file:file { open getattr read write append map };
+
+# Touch daemon
+type touch_daemon, domain;
+type touch_daemon_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(touch_daemon)
+
+allow touch_daemon vendor_file:file r_file_perms;
+allow touch_daemon vendor_file:file execute;
+allow touch_daemon same_process_hal_file:file execute;
+allow touch_daemon proc:file rw_file_perms;
+allow touch_daemon sysfs:file rw_file_perms;
+allow touch_daemon tcm_hbp_device:chr_file rw_file_perms;
+allow touch_daemon oplus_touch_data_file:dir { open getattr read search add_name write remove_name };
+allow touch_daemon oplus_touch_data_file:file { create rename setattr unlink open getattr read write append map };
+allow touch_daemon vendor_data_file:dir { getattr search add_name write };
+allow touch_daemon proc_bus_input:file r_file_perms;
+allow touch_daemon vndbinder_device:chr_file { open read write ioctl map };
+allow touch_daemon self:capability sys_nice;
+allow touch_daemon socket_device:sock_file create_file_perms;
+unix_socket_connect(touch_daemon, property, init)
+binder_call(touch_daemon, vndservicemanager)
+binder_call(touch_daemon, servicemanager)
+binder_call(hal_oplus_touch, touch_daemon)
+
+# Fingerprint HAL
+type hal_fingerprint_oplus, domain;
+type hal_fingerprint_oplus_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_fingerprint_oplus)
+hal_server_domain(hal_fingerprint_oplus, hal_fingerprint)
+
+binder_call(hal_fingerprint_oplus, servicemanager)
+binder_call(system_server, hal_fingerprint_oplus)
+
+allow hal_fingerprint_oplus vendor_file:file r_file_perms;
+allow hal_fingerprint_oplus vendor_file:file execute;
+allow hal_fingerprint_oplus same_process_hal_file:file execute;
+allow hal_fingerprint_oplus sysfs:file rw_file_perms;
+allow hal_fingerprint_oplus proc:file rw_file_perms;
+
+allow hal_fingerprint_oplus fingerprint_device:chr_file rw_file_perms;
+allow hal_fingerprint_oplus uhid_device:chr_file rw_file_perms;
+allow hal_fingerprint_oplus mobicore_user_device:chr_file rw_file_perms;
+allow hal_fingerprint_oplus oplus_fingerprint_data_file:dir { open getattr read search add_name write remove_name };
+allow hal_fingerprint_oplus oplus_fingerprint_data_file:file { create rename setattr unlink open getattr read write append map };
+allow hal_fingerprint_oplus vendor_data_file:dir { getattr search add_name write };
+unix_socket_connect(hal_fingerprint_oplus, property, init)
+
+# Touch HAL client
+allow hal_fingerprint_oplus hal_oplus_touch_service:service_manager find;
+binder_call(hal_fingerprint_oplus, hal_oplus_touch)
+
+# Touch daemon input
+allow touch_daemon input_device:dir search;
+allow touch_daemon input_device:chr_file rw_file_perms;
+allow touch_daemon vendor_data_file:file create_file_perms;
+allow hal_fingerprint_oplus self:netlink_socket { bind create read write };
+
+# touchDaemon binder on vndbinder
+allow touch_daemon oplus_touchdaemon_service:service_manager add;
+allow hal_oplus_touch oplus_touchdaemon_service:service_manager find;

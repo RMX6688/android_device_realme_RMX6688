@@ -1,0 +1,39 @@
+# Oplus property types
+
+# Camera
+vendor.oplus.camera.                u:object_r:vendor_oplus_camera_prop:s0 prefix string
+vendor.camera.vm.parameters         u:object_r:vendor_oplus_camera_prop:s0 prefix string
+vendor.debug.tpi.s.semi.run         u:object_r:vendor_oplus_camera_prop:s0 exact string
+
+# Display
+vendor.oplus.display.               u:object_r:vendor_oplus_display_prop:s0 prefix string
+vendor.dps.dump.composerpid         u:object_r:vendor_oplus_display_prop:s0 exact string
+
+# Fingerprint
+persist.vendor.fingerprint.         u:object_r:vendor_oplus_fingerprint_prop:s0 prefix string
+vendor.fingerprint.                 u:object_r:vendor_oplus_fingerprint_prop:s0 prefix string
+vendor.oplus.fingerprint.           u:object_r:vendor_oplus_fingerprint_prop:s0 prefix string
+
+# Power
+vendor.boostfwk.rescue.checkpoint   u:object_r:vendor_oplus_power_prop:s0 exact string
+vendor.debug.sf.dynamic_duration.app. u:object_r:vendor_oplus_sf_debug_prop:s0 prefix string
+
+# Radio
+persist.vendor.oplus.radio.         u:object_r:vendor_oplus_radio_prop:s0 prefix string
+ro.vendor.oplus.radio.              u:object_r:vendor_oplus_radio_prop:s0 prefix string
+vendor.oplus.radio.                 u:object_r:vendor_oplus_radio_prop:s0 prefix string
+odm.ril.radio.status.               u:object_r:vendor_oplus_radio_prop:s0 prefix string
+
+# Secure element
+vendor.oplus.secure_element.        u:object_r:vendor_oplus_se_prop:s0 prefix string
+
+# Sensors
+ro.vendor.oplus.sensor.             u:object_r:vendor_oplus_sensors_prop:s0 prefix string
+
+# Touch
+vendor.oplus.touch.                 u:object_r:vendor_oplus_touch_prop:s0 prefix string
+vendor.oplus.touchDaemon.           u:object_r:vendor_oplus_touch_prop:s0 prefix string
+vendor.touchdaemon.                 u:object_r:vendor_oplus_touch_prop:s0 prefix string
+
+# URCC
+vendor.oplus.urcc.started           u:object_r:vendor_oplus_urcc_prop:s0 exact bool

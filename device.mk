@@ -108,8 +108,6 @@ PRODUCT_PACKAGES += \
     init.mt6991.usb.rc \
     init.mtkgki.rc \
     init.project.rc \
-    init.selinux.rc \
-    init.selinux.sh \
     init.sensor_2_0.rc \
     ueventd.mt6991.rc
 

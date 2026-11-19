@@ -84,22 +84,8 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "init.selinux.rc",
-    src: "init.selinux.rc",
-    relative_install_path: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
     name: "init.sensor_2_0.rc",
     src: "init.sensor_2_0.rc",
     relative_install_path: "init/hw",
-    vendor: true,
-}
-
-// Scripts (/vendor/bin)
-sh_binary {
-    name: "init.selinux.sh",
-    src: "init.selinux.sh",
     vendor: true,
 }

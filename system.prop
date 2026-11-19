@@ -6,6 +6,8 @@ ro.audio.silent=0
 ro.audio.spatializer_enabled=true
 ro.audio.spatializer_type=oplus
 ro.audio.usb.period_us=16000
+audio.tuning.def_path=/odm/etc/audio/audio_param/.
+ro.oplus.audio.aidl_volume=true
 
 # Bluetooth
 bluetooth.profile.a2dp.source.enabled=true

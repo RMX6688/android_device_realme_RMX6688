@@ -1,0 +1,4 @@
+# vndbinder services
+
+# touchDaemon's binder, looked up by the OplusTouch HAL (transferTotouchByBinder)
+touchDeamonBinder   u:object_r:oplus_touchdaemon_service:s0

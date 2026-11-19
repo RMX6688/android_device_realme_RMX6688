@@ -1,0 +1,55 @@
+# Oplus platform services
+
+type hal_oplus_services, domain;
+type hal_oplus_services_exec, exec_type, vendor_file_type, file_type;
+type hal_oplus_services_service, service_manager_type;
+init_daemon_domain(hal_oplus_services)
+
+allow hal_oplus_services hal_oplus_services_service:service_manager { add find };
+binder_call(hal_oplus_services, servicemanager)
+binder_call(hal_oplus_services, system_server)
+
+# Binaries and libraries
+allow hal_oplus_services vendor_file:file r_file_perms;
+allow hal_oplus_services vendor_file:file execute;
+allow hal_oplus_services same_process_hal_file:file execute;
+
+# sysfs / proc / properties
+allow hal_oplus_services vndbinder_device:chr_file { open read write ioctl map };
+allow hal_oplus_services ccci_device:chr_file rw_file_perms;
+allow hal_oplus_services sysfs_ccci:dir search;
+allow hal_oplus_services sysfs_ccci:file r_file_perms;
+allow hal_oplus_services proc_version:file r_file_perms;
+allow hal_oplus_services { mnt_vendor_file nfc_data_vendor_file }:dir search;
+allow hal_oplus_services self:capability { ipc_lock sys_nice };
+allow hal_oplus_services self:netlink_generic_socket create;
+allow hal_oplus_services sysfs:file rw_file_perms;
+allow hal_oplus_services proc:file r_file_perms;
+
+# Display
+allow hal_oplus_services oplus_display_device:chr_file rw_file_perms;
+allow hal_oplus_services oplus_display_data_file:dir { open getattr read search add_name write remove_name };
+allow hal_oplus_services oplus_display_data_file:file { open getattr read write append map };
+
+# NFC
+hal_client_domain(hal_oplus_services, hal_nfc)
+hal_client_domain(hal_oplus_services, hal_secure_element)
+binder_call(hal_oplus_services, hal_nfc_default)
+binder_call(hal_oplus_services, hal_secure_element_default)
+
+# Clients
+allow { system_server mtk_hal_camera mtk_hal_power hal_audio_default
+        hal_fingerprint_oplus cameraserver } hal_oplus_services_service:service_manager find;
+binder_call(mtk_hal_camera, hal_oplus_services)
+binder_call(mtk_hal_power, hal_oplus_services)
+binder_call(hal_audio_default, hal_oplus_services)
+binder_call(hal_fingerprint_oplus, hal_oplus_services)
+binder_call(system_server, hal_oplus_services)
+
+# Misc
+allow hal_oplus_services self:netlink_generic_socket { bind read write };
+allow hal_oplus_services nfc_data_vendor_file:dir { write add_name };
+allow hal_oplus_services nfc_data_vendor_file:file create_file_perms;
+allow hal_oplus_services persist_data_file:dir search;
+allow hal_oplus_services tty_cmipc_device:chr_file rw_file_perms;
+binder_call(hal_oplus_services, vndservicemanager)

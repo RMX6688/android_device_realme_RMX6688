@@ -1,0 +1,39 @@
+# Service types
+
+# Oplus platform services
+vendor.oplus.hardware.performance.IPerformance/default            u:object_r:hal_oplus_services_service:s0
+vendor.oplus.hardware.olc2.IOplusLogCore/default                  u:object_r:hal_oplus_services_service:s0
+vendor.oplus.hardware.urcc.IUrcc/default                          u:object_r:hal_oplus_services_service:s0
+vendor.oplus.hardware.commondcs.ICommonDcsAidlHalService/default  u:object_r:hal_oplus_services_service:s0
+vendor.oplus.hardware.displaypanelfeature.IDisplayPanelFeature/default u:object_r:hal_oplus_services_service:s0
+vendor.oplus.hardware.displaycolorfeature.IDisplayColorFeature/default u:object_r:hal_oplus_services_service:s0
+vendor.oplus.hardware.cwb.ICwbService/default                     u:object_r:hal_graphics_composer_service:s0
+
+# Oplus NFC extensions
+vendor.oplus.hardware.nfc.IOplusNfc/default                       u:object_r:hal_oplus_services_service:s0
+vendor.oplus.hardware.nfcExtns.INfcExtns/default                  u:object_r:hal_oplus_services_service:s0
+vendor.oplus.hardware.nfc.esepower.INfcEsePower/default           u:object_r:hal_oplus_services_service:s0
+vendor.tms.tmsnfc_aidl.ITmsNfc/default                            u:object_r:hal_nfc_service:s0
+vendor.tms.tmsese_aidl.ITmsEse/default                            u:object_r:secure_element_service:s0
+
+# Touch
+vendor.oplus.hardware.touch.IOplusTouch/default                   u:object_r:hal_oplus_touch_service:s0
+
+# Camera extensions
+vendor.oplus.hardware.camera_audio.ICameraAudioService/default    u:object_r:hal_camera_service:s0
+vendor.oplus.hardware.camera_rfi.ICameraRfiService/default        u:object_r:hal_camera_service:s0
+
+# Radio
+vendor.oplus.hardware.radio.IRadioStable/OplusRadio0              u:object_r:hal_radio_service:s0
+vendor.oplus.hardware.radio.IRadioStable/OplusRadio1              u:object_r:hal_radio_service:s0
+vendor.oplus.hardware.appradioaidl.IAppRadioStable/OplusAppRadio0 u:object_r:hal_radio_service:s0
+vendor.oplus.hardware.appradioaidl.IAppRadioStable/OplusAppRadio1 u:object_r:hal_radio_service:s0
+vendor.oplus.hardware.subsys_interface.subsys_radio.ISubsysRadio/slot1 u:object_r:hal_radio_service:s0
+vendor.oplus.hardware.subsys_interface.subsys_radio.ISubsysRadio/slot2 u:object_r:hal_radio_service:s0
+
+# Audio modules
+android.hardware.audio.core.IModule/binaural_record               u:object_r:hal_audio_service:s0
+android.hardware.audio.core.IModule/virtual                      u:object_r:hal_audio_service:s0
+
+vendor.oplus.hardware.camera.aon.IAONService/default               u:object_r:hal_camera_service:s0
+vendor.oplus.hardware.binaural_record.IBinauralRecordProviderFactory/default u:object_r:hal_audio_service:s0

@@ -1,0 +1,57 @@
+# Platform domains
+
+# Vibrator
+allow hal_vibrator_default awinic_haptic_device:chr_file rw_file_perms;
+allow hal_vibrator_default block_device:dir search;
+allow hal_vibrator_default sysfs:file rw_file_perms;
+
+# Sensors
+allow hal_sensors_default ssc_interactive_device:chr_file rw_file_perms;
+
+# Power / Bluetooth / health
+allow mtk_hal_power { proc proc_easmgr }:file { getattr open read write };
+allow mtk_hal_power sysfs:file write;
+allow mtk_hal_power gpu_device:dir search;
+allow mtk_hal_power dri_device:chr_file rw_file_perms;
+allow mtk_hal_bluetooth proc:file r_file_perms;
+allow hal_health_default sysfs:file r_file_perms;
+
+# NFC / secure element
+allow hal_nfc_default proc:file r_file_perms;
+allow hal_secure_element_default mobicore_user_device:chr_file rw_file_perms;
+allow nfc nfc_data_vendor_file:dir search;
+
+# Vold
+allow vold mnt_vendor_file:dir r_dir_perms;
+
+# Modem
+allow ccci_mdinit sysfs:file r_file_perms;
+allow nvram_daemon proc:file r_file_perms;
+allow fuelgauged_nvram sysfs_dt_firmware_android:dir search;
+allow fuelgauged_nvram sysfs_dt_firmware_android:file r_file_perms;
+
+# IR
+allow hal_ir_default oplus_consumer_ir_device:chr_file rw_file_perms;
+
+# Secure element
+hal_server_domain(hal_secure_element_default, hal_secure_element)
+
+# UART launcher (BT UART setup, started by init.btmtk_uart.rc)
+type uart_launcher, domain;
+type uart_launcher_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(uart_launcher)
+
+allow uart_launcher vendor_file:file r_file_perms;
+allow uart_launcher vendor_file:file execute;
+allow uart_launcher same_process_hal_file:file execute;
+allow uart_launcher ttyS_device:chr_file rw_file_perms;
+allow uart_launcher proc:file rw_file_perms;
+allow uart_launcher sysfs:file rw_file_perms;
+
+# init-started vendor shell scripts (subsys-sh / readahead_init / swap_enable_init)
+domain_auto_trans(init, vendor_shell_exec, vendor_shell)
+
+# USB HAL extras
+allow hal_usb_default sysfs_usb_nonplat:dir r_dir_perms;
+get_prop(hal_usb_default, usb_control_prop)
+get_prop(hal_usb_gadget_default, usb_control_prop)

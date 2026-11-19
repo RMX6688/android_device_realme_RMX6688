@@ -1,0 +1,16 @@
+# Camera
+
+allow mtk_hal_camera oplus_persist_camera_file:dir { open getattr read search add_name write remove_name };
+allow mtk_hal_camera oplus_persist_camera_file:file { create rename setattr unlink open getattr read write append map };
+allow mtk_hal_camera oplus_camera_data_file:dir { open getattr read search add_name write remove_name };
+allow mtk_hal_camera oplus_camera_data_file:file { create rename setattr unlink open getattr read write append map };
+allow mtk_hal_camera persist_data_file:dir search;
+allow mtk_hal_camera vendor_data_file:file getattr;
+
+# Sensors and thermal
+allow mtk_hal_camera sysfs_therm:dir search;
+allow mtk_hal_camera { sysfs sysfs_therm sysfs_chipid }:file r_file_perms;
+allow mtk_hal_camera proc:file { getattr open read write };
+allow mtk_hal_camera proc_version:file r_file_perms;
+
+get_prop(mtk_hal_camera, camera_config_prop)

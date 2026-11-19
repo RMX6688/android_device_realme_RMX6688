@@ -1,0 +1,4 @@
+# Audio
+
+allow hal_audio_default sysfs_adsp:dir search;
+allow hal_audio_default sysfs_adsp:file { getattr open read write };

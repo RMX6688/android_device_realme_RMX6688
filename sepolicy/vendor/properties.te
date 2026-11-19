@@ -1,0 +1,31 @@
+# Properties
+
+# Types we own (names must be vendor_/odm_ prefixed for check_prop_prefix)
+vendor_internal_prop(vendor_oplus_sf_debug_prop)
+vendor_internal_prop(vendor_oplus_camera_prop)
+vendor_internal_prop(vendor_oplus_power_prop)
+vendor_internal_prop(vendor_oplus_radio_prop)
+vendor_internal_prop(vendor_oplus_fingerprint_prop)
+vendor_internal_prop(vendor_oplus_touch_prop)
+vendor_internal_prop(vendor_oplus_urcc_prop)
+vendor_internal_prop(vendor_oplus_se_prop)
+vendor_internal_prop(vendor_oplus_sensors_prop)
+vendor_internal_prop(vendor_oplus_display_prop)
+
+set_prop(vendor_init, vendor_oplus_sf_debug_prop)
+set_prop(mtk_hal_camera, vendor_oplus_camera_prop)
+set_prop(mtk_hal_power, vendor_oplus_power_prop)
+set_prop(rild, vendor_oplus_radio_prop)
+set_prop(hal_fingerprint_oplus, vendor_oplus_fingerprint_prop)
+set_prop(hal_oplus_touch, vendor_oplus_touch_prop)
+set_prop(touch_daemon, vendor_oplus_touch_prop)
+set_prop(hal_oplus_services, vendor_oplus_urcc_prop)
+set_prop(hal_secure_element_default, vendor_oplus_se_prop)
+set_prop(hal_sensors_default, vendor_oplus_sensors_prop)
+set_prop(hal_graphics_composer_default, vendor_oplus_display_prop)
+
+# MTK telephony
+allow vendor_init vendor_mtk_telephony_addon_prop:property_service set;
+
+# init loads /system/build.prop through this bucket
+allow init default_prop:property_service set;

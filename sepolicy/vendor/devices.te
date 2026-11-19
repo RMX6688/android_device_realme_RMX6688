@@ -1,0 +1,15 @@
+# Device nodes
+type oplus_consumer_ir_device, dev_type;
+type oplus_display_device, dev_type;
+type tcm_hbp_device, dev_type;
+type awinic_haptic_device, dev_type;
+type ssc_interactive_device, dev_type;
+
+# Vendor data
+type oplus_persist_camera_file, file_type, data_file_type;
+type oplus_camera_data_file, file_type, data_file_type;
+type oplus_display_data_file, file_type, data_file_type;
+type oplus_fingerprint_data_file, file_type, data_file_type;
+type oplus_touch_data_file, file_type, data_file_type;
+type tty_cmipc_device, dev_type;
+type oplus_touchdaemon_service, vndservice_manager_type;
