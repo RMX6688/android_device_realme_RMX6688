@@ -45,6 +45,11 @@
         <version>2</version>
         <fqname>IWifi/default</fqname>
     </hal>
+    <hal format="aidl">
+        <name>android.hardware.wifi.hostapd</name>
+        <version>2</version>
+        <fqname>IHostapd/default</fqname>
+    </hal>
     <hal format="native">
         <name>mapper</name>
         <fqname>@5.0/mediatek</fqname>

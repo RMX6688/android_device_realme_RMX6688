@@ -2591,6 +2591,8 @@ vendor/lib64/android.hardware.tetheroffload-V1-ndk.so
 vendor/lib64/android.hardware.wifi-V2-ndk.so
 vendor/lib64/android.hardware.wifi.common-V1-ndk.so
 vendor/lib64/android.hardware.wifi.hostapd-V2-ndk.so
+vendor/bin/hw/hostapd
+vendor/etc/init/hostapd.android.rc
 vendor/lib64/libwifi-system-iface.so
 vendor/etc/init/android.hardware.tetheroffload-V1-service.rc
 

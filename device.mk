@@ -133,7 +133,8 @@ PRODUCT_PACKAGES += \
     MssiFrameworkTelephonyOverlay \
     SettingsOverlayRMX6688 \
     SystemUIResOverlayRMX6688 \
-    TelephonyOverlayRMX6688
+    TelephonyOverlayRMX6688 \
+    WifiResOverlayRMX6688
 
 # Permissions
 PRODUCT_COPY_FILES += \
